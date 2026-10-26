@@ -1,0 +1,14 @@
+{
+  "name": "lute-rs-demo",
+  "private": true,
+  "description": "Vditor + Lute (Rust/WASM) \u5b9e\u6d4b\u9875\u9762",
+  "scripts": {
+    "setup": "node setup.mjs",
+    "build:lute": "bash ../javascript/build-wasm.sh && node setup.mjs",
+    "start": "node server.mjs",
+    "test": "node test-api.mjs"
+  },
+  "devDependencies": {
+    "vditor": "4.0.1"
+  }
+}

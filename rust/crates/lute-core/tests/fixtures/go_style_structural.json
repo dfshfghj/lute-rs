@@ -1,0 +1,78 @@
+{
+  "html_text_style": [
+    {
+      "name": "feishu",
+      "input": "<div data-lark-html-role=\"root\"><div>222<span style=\"color:rgb(216,57,49);background-color:rgb(255,165,61)\">333<s>33</s><strong>3</strong></span><strong>33444</strong><u>4444</u><code>231</code></div></div>",
+      "expected": [
+        "color: rgb(216,57,49);background-color: rgb(255,165,61);",
+        "data-type=\"s\"",
+        "data-type=\"strong\"",
+        "data-type=\"u\"",
+        "data-type=\"code\""
+      ]
+    },
+    {
+      "name": "family",
+      "input": "<p><span style=\"font-family: 'Noto Sans', serif; font-size:18pt;color:#123456\">A<strong>B</strong><a href=\"https://example.com\" title=\"link\">C</a><code>D</code></span></p>",
+      "expected": [
+        "font-family:",
+        "font-size: 24.000000px;",
+        "data-href=\"https://example.com\"",
+        "data-type=\"code\""
+      ]
+    },
+    {
+      "name": "small",
+      "input": "<p style=\"font-size:24px\">A<small>B<small>C</small><small style=\"font-size:18px\">D</small></small>E</p>",
+      "expected": [
+        "font-size: 20.000000px;",
+        "font-size: 16.666667px;",
+        "font-size: 18.000000px;"
+      ]
+    },
+    {
+      "name": "escaping",
+      "input": "<p><span style=\"color:red\">*&lt;img src=x&gt;&amp;</span></p>",
+      "expected": [
+        "*&lt;img src=x&gt;&amp;"
+      ]
+    },
+    {
+      "name": "link",
+      "input": "<p><a href=\"https://example.com\" title=\"link\"><span style=\"color:red\">C</span></a></p>",
+      "expected": [
+        "data-href=\"https://example.com\"",
+        "data-title=\"link\"",
+        "color: red;"
+      ]
+    },
+    {
+      "name": "table",
+      "input": "<table><tr><td><small style=\"color:red\">A<strong>B</strong></small></td><td>C</td></tr></table>",
+      "expected": [
+        "data-type=\"NodeTable\"",
+        "font-size: 0.833333em;",
+        "color: red;"
+      ]
+    },
+    {
+      "name": "font",
+      "input": "<p><font color=\"#123456\" face=\"Arial\" size=\"4\">A<strong>B</strong></font></p>",
+      "expected": [
+        "font-family: Arial;",
+        "font-size: 1.200000rem;",
+        "data-type=\"strong\""
+      ]
+    },
+    {
+      "name": "styled code",
+      "input": "<p><code style=\"color:red;font-size:12px\">A</code></p>",
+      "expected": [
+        "data-type=\"code\"",
+        "color: red;",
+        "font-size: 12.000000px;"
+      ]
+    }
+  ],
+  "wps": "<p class=MsoNormal style=\"mso-pagination:widow-orphan;text-align:left;\"><span style=\"mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;\">222</span><span style=\"font-family:宋体;color:rgb(216,57,49);font-size:12.0000pt;background:rgb(255,165,61);mso-shading:rgb(255,165,61);\">333</span><s><span style=\"font-family:宋体;color:rgb(216,57,49);text-decoration:line-through;font-size:12.0000pt;background:rgb(255,165,61);\">33</span></s><span style=\"font-family:宋体;color:rgb(216,57,49);font-size:12.0000pt;background:rgb(255,165,61);\">3</span><b style=\"mso-bidi-font-weight:normal\"><span style=\"font-family:宋体;color:rgb(216,57,49);mso-ansi-font-weight:bold;font-size:12.0000pt;background:rgb(255,165,61);\">3</span></b><b><span style=\"font-family:宋体;font-size:12.0000pt;\">33444</span></b><span style=\"font-family:宋体;font-size:12.0000pt;\">444</span><u><span style=\"font-family:宋体;text-decoration:underline;text-underline:single;font-size:12.0000pt;\">4444</span></u><span style=\"font-family:宋体;font-size:12.0000pt;\">4 4123123123</span></p>"
+}

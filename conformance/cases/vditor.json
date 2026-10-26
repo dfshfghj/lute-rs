@@ -1,0 +1,321 @@
+{
+  "group": "vditor",
+  "cases": [
+    {
+      "id": "md2vditor-basic",
+      "api": "Md2VditorDOM",
+      "args": [
+        "# 标题\n\n**粗体** 与 *斜体*\n"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditor-table",
+      "api": "Md2VditorDOM",
+      "args": [
+        "| a | b |\n| --- | --- |\n| 1 | 2 |\n"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditor-code",
+      "api": "Md2VditorDOM",
+      "args": [
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ],
+        [
+          "SetCodeSyntaxHighlight",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "md2vditor-empty",
+      "api": "Md2VditorDOM",
+      "args": [
+        ""
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorir-basic",
+      "api": "Md2VditorIRDOM",
+      "args": [
+        "# 标题\n\n**粗体**\n"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorir-list",
+      "api": "Md2VditorIRDOM",
+      "args": [
+        "- a\n- b\n  - c\n"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorir-math",
+      "api": "Md2VditorIRDOM",
+      "args": [
+        "$a+b$\n\n$$\nc\n$$\n"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorir-empty",
+      "api": "Md2VditorIRDOM",
+      "args": [
+        ""
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorsv-basic",
+      "api": "Md2VditorSVDOM",
+      "args": [
+        "# 标题\n\n正文\n"
+      ],
+      "setup": [
+        [
+          "SetVditorSV",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorsv-table",
+      "api": "Md2VditorSVDOM",
+      "args": [
+        "| a | b |\n| --- | --- |\n| 1 | 2 |\n"
+      ],
+      "setup": [
+        [
+          "SetVditorSV",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2vditorsv-empty",
+      "api": "Md2VditorSVDOM",
+      "args": [
+        ""
+      ],
+      "setup": [
+        [
+          "SetVditorSV",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2vditor-basic",
+      "api": "HTML2VditorDOM",
+      "args": [
+        "<h1>标题</h1><p><strong>粗体</strong></p>"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2vditor-list",
+      "api": "HTML2VditorDOM",
+      "args": [
+        "<ul><li>a</li><li>b</li></ul>"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2vditor-empty",
+      "api": "HTML2VditorDOM",
+      "args": [
+        ""
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2vditorir-basic",
+      "api": "HTML2VditorIRDOM",
+      "args": [
+        "<h1>标题</h1><p>正文</p>"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2vditorir-table",
+      "api": "HTML2VditorIRDOM",
+      "args": [
+        "<table><thead><tr><th>a</th></tr></thead><tbody><tr><td>1</td></tr></tbody></table>"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2vditorsv-basic",
+      "api": "HTML2VditorSVDOM",
+      "args": [
+        "<h1>标题</h1><p>正文</p>"
+      ],
+      "setup": [
+        [
+          "SetVditorSV",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "vditordom2html-basic",
+      "api": "VditorDOM2HTML",
+      "args": [
+        "<div data-type=\"NodeHeading\" data-subtype=\"h1\"><h1>标题</h1></div><div data-type=\"NodeParagraph\"><div>正文</div></div>"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "vditordom2md-basic",
+      "api": "VditorDOM2Md",
+      "args": [
+        "<div data-type=\"NodeHeading\" data-subtype=\"h1\"><h1>标题</h1></div>"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "vditorirdom2html-basic",
+      "api": "VditorIRDOM2HTML",
+      "args": [
+        "<p data-block=\"0\">正文</p>"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "vditorirdom2md-basic",
+      "api": "VditorIRDOM2Md",
+      "args": [
+        "<p data-block=\"0\">正文</p>"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "spin-vditordom",
+      "api": "SpinVditorDOM",
+      "args": [
+        "<div data-type=\"NodeParagraph\"><div>a</div></div><div data-type=\"NodeParagraph\"><div>b</div></div>"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "spin-vditorirdom",
+      "api": "SpinVditorIRDOM",
+      "args": [
+        "<p data-block=\"0\">a</p><p data-block=\"1\">b</p>"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "spin-vditorsvdom",
+      "api": "SpinVditorSVDOM",
+      "args": [
+        "# 标题\n\n段落一\n\n段落二\n"
+      ],
+      "setup": [
+        [
+          "SetVditorSV",
+          true
+        ]
+      ]
+    }
+  ]
+}

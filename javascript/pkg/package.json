@@ -1,0 +1,17 @@
+{
+  "name": "lute-wasm",
+  "type": "module",
+  "description": "Lute 的 WebAssembly 绑定层",
+  "version": "0.1.0",
+  "license": "MulanPSL-2.0",
+  "files": [
+    "lute_wasm_bg.wasm",
+    "lute_wasm.js",
+    "lute_wasm.d.ts"
+  ],
+  "main": "lute_wasm.js",
+  "types": "lute_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "group": "blockdom",
+  "cases": [
+    {
+      "id": "md2blockdom-basic",
+      "api": "Md2BlockDOM",
+      "args": [
+        "# 标题\n\n正文内容\n",
+        false
+      ]
+    },
+    {
+      "id": "md2blockdom-reserve-empty",
+      "api": "Md2BlockDOM",
+      "args": [
+        "a\n\n\n\nb\n",
+        true
+      ]
+    },
+    {
+      "id": "md2blockdom-empty",
+      "api": "Md2BlockDOM",
+      "args": [
+        "",
+        false
+      ]
+    },
+    {
+      "id": "md2blockdom-list",
+      "api": "Md2BlockDOM",
+      "args": [
+        "- 项目一\n- 项目二\n",
+        false
+      ]
+    },
+    {
+      "id": "md2blockdom-table",
+      "api": "Md2BlockDOM",
+      "args": [
+        "| a | b |\n| --- | --- |\n| 1 | 2 |\n",
+        false
+      ]
+    },
+    {
+      "id": "md2blockdom-autolink",
+      "api": "Md2BlockDOMWithAutoLink",
+      "args": [
+        "https://example.com\n",
+        false
+      ]
+    },
+    {
+      "id": "html2blockdom-basic",
+      "api": "HTML2BlockDOM",
+      "args": [
+        "<p>正文内容</p><h2>标题</h2>"
+      ]
+    },
+    {
+      "id": "html2blockdom-list",
+      "api": "HTML2BlockDOM",
+      "args": [
+        "<ul><li>项目一</li><li>项目二</li></ul>"
+      ]
+    },
+    {
+      "id": "html2blockdom-empty",
+      "api": "HTML2BlockDOM",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "blockdom2md-basic",
+      "api": "BlockDOM2Md",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2md-heading",
+      "api": "BlockDOM2Md",
+      "args": [
+        "<div data-node-id=\"20210101120000-bcdefgh\" data-node-index=\"2\" data-type=\"NodeHeading\" class=\"h2\" data-subtype=\"h2\"><div contenteditable=\"true\" spellcheck=\"false\">标题</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2md-list",
+      "api": "BlockDOM2Md",
+      "args": [
+        "<div data-node-id=\"20210101120000-cdefghi\" data-node-index=\"3\" data-type=\"NodeList\" class=\"list\" data-subtype=\"u\"><div data-marker=\"*\" data-subtype=\"u\" data-node-id=\"20210101120000-defghij\" data-type=\"NodeListItem\" class=\"li\"><div class=\"protyle-action\"></div><div data-node-id=\"20210101120000-efghijk\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">项目一</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2md-table",
+      "api": "BlockDOM2Md",
+      "args": [
+        "<div data-node-id=\"20210101120000-fghijkl\" data-node-index=\"4\" data-type=\"NodeTable\" class=\"table\"><div contenteditable=\"false\"><table contenteditable=\"true\" spellcheck=\"false\"><colgroup><col><col></colgroup><thead><tr><th>a</th><th>b</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2md-empty",
+      "api": "BlockDOM2Md",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "blockdom2stdmd-basic",
+      "api": "BlockDOM2StdMd",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2stdmd-heading",
+      "api": "BlockDOM2StdMd",
+      "args": [
+        "<div data-node-id=\"20210101120000-bcdefgh\" data-node-index=\"2\" data-type=\"NodeHeading\" class=\"h2\" data-subtype=\"h2\"><div contenteditable=\"true\" spellcheck=\"false\">标题</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2stdmd-list",
+      "api": "BlockDOM2StdMd",
+      "args": [
+        "<div data-node-id=\"20210101120000-cdefghi\" data-node-index=\"3\" data-type=\"NodeList\" class=\"list\" data-subtype=\"u\"><div data-marker=\"*\" data-subtype=\"u\" data-node-id=\"20210101120000-defghij\" data-type=\"NodeListItem\" class=\"li\"><div class=\"protyle-action\"></div><div data-node-id=\"20210101120000-efghijk\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">项目一</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2html-basic",
+      "api": "BlockDOM2HTML",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2html-heading",
+      "api": "BlockDOM2HTML",
+      "args": [
+        "<div data-node-id=\"20210101120000-bcdefgh\" data-node-index=\"2\" data-type=\"NodeHeading\" class=\"h2\" data-subtype=\"h2\"><div contenteditable=\"true\" spellcheck=\"false\">标题</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2html-table",
+      "api": "BlockDOM2HTML",
+      "args": [
+        "<div data-node-id=\"20210101120000-fghijkl\" data-node-index=\"4\" data-type=\"NodeTable\" class=\"table\"><div contenteditable=\"false\"><table contenteditable=\"true\" spellcheck=\"false\"><colgroup><col><col></colgroup><thead><tr><th>a</th><th>b</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2text-basic",
+      "api": "BlockDOM2Text",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div data-node-id=\"20210101120000-bcdefgh\" data-node-index=\"2\" data-type=\"NodeHeading\" class=\"h2\" data-subtype=\"h2\"><div contenteditable=\"true\" spellcheck=\"false\">标题</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2text-list",
+      "api": "BlockDOM2Text",
+      "args": [
+        "<div data-node-id=\"20210101120000-cdefghi\" data-node-index=\"3\" data-type=\"NodeList\" class=\"list\" data-subtype=\"u\"><div data-marker=\"*\" data-subtype=\"u\" data-node-id=\"20210101120000-defghij\" data-type=\"NodeListItem\" class=\"li\"><div class=\"protyle-action\"></div><div data-node-id=\"20210101120000-efghijk\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">项目一</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2text-empty",
+      "api": "BlockDOM2Text",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "blockdom2textlen-basic",
+      "api": "BlockDOM2TextLen",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div data-node-id=\"20210101120000-bcdefgh\" data-node-index=\"2\" data-type=\"NodeHeading\" class=\"h2\" data-subtype=\"h2\"><div contenteditable=\"true\" spellcheck=\"false\">标题</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2textlen-empty",
+      "api": "BlockDOM2TextLen",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "blockdom2content-basic",
+      "api": "BlockDOM2Content",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2content-list",
+      "api": "BlockDOM2Content",
+      "args": [
+        "<div data-node-id=\"20210101120000-cdefghi\" data-node-index=\"3\" data-type=\"NodeList\" class=\"list\" data-subtype=\"u\"><div data-marker=\"*\" data-subtype=\"u\" data-node-id=\"20210101120000-defghij\" data-type=\"NodeListItem\" class=\"li\"><div class=\"protyle-action\"></div><div data-node-id=\"20210101120000-efghijk\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">项目一</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2escapemarker-basic",
+      "api": "BlockDOM2EscapeMarkerContent",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2richhtml-basic",
+      "api": "BlockDOM2RichHTML",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "blockdom2inline-basic",
+      "api": "BlockDOM2InlineBlockDOM",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "inlinemd2blockdom-basic",
+      "api": "InlineMd2BlockDOM",
+      "args": [
+        "**粗体** 与 `code`"
+      ]
+    },
+    {
+      "id": "inlinemd2blockdom-link",
+      "api": "InlineMd2BlockDOM",
+      "args": [
+        "[链接](https://example.com)"
+      ]
+    },
+    {
+      "id": "spin-blockdom-basic",
+      "api": "SpinBlockDOM",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文内容</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div data-node-id=\"20210101120000-bcdefgh\" data-node-index=\"2\" data-type=\"NodeHeading\" class=\"h2\" data-subtype=\"h2\"><div contenteditable=\"true\" spellcheck=\"false\">标题</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "spin-blockdom-list",
+      "api": "SpinBlockDOM",
+      "args": [
+        "<div data-node-id=\"20210101120000-cdefghi\" data-node-index=\"3\" data-type=\"NodeList\" class=\"list\" data-subtype=\"u\"><div data-marker=\"*\" data-subtype=\"u\" data-node-id=\"20210101120000-defghij\" data-type=\"NodeListItem\" class=\"li\"><div class=\"protyle-action\"></div><div data-node-id=\"20210101120000-efghijk\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">项目一</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "spin-blockdom-empty",
+      "api": "SpinBlockDOM",
+      "args": [
+        ""
+      ],
+      "allowPanic": true
+    }
+  ]
+}

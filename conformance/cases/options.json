@@ -1,0 +1,1581 @@
+{
+  "group": "options",
+  "cases": [
+    {
+      "id": "opt-gfmtable-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "| a | b |\n| --- | --- |\n| 1 | 2 |\n"
+      ],
+      "setup": [
+        [
+          "SetGFMTable",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmtable-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "| a | b |\n| --- | --- |\n| 1 | 2 |\n"
+      ],
+      "setup": [
+        [
+          "SetGFMTable",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmtasklist-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [ ] a\n- [x] b\n"
+      ],
+      "setup": [
+        [
+          "SetGFMTaskListItem",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmtasklist-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [ ] a\n- [x] b\n"
+      ],
+      "setup": [
+        [
+          "SetGFMTaskListItem",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmstrikethrough-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "~~x~~\n"
+      ],
+      "setup": [
+        [
+          "SetGFMStrikethrough",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmstrikethrough-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "~~x~~\n"
+      ],
+      "setup": [
+        [
+          "SetGFMStrikethrough",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmstrikethrough1-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "~x~\n"
+      ],
+      "setup": [
+        [
+          "SetGFMStrikethrough1",
+          true
+        ],
+        [
+          "SetSub",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-gfmstrikethrough1-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "~x~\n"
+      ],
+      "setup": [
+        [
+          "SetGFMStrikethrough1",
+          false
+        ],
+        [
+          "SetSub",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-fullwidthstrike-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "～～x～～\n"
+      ],
+      "setup": [
+        [
+          "SetFullWidthStrikethrough",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-fullwidthstrike-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "～～x～～\n"
+      ],
+      "setup": [
+        [
+          "SetFullWidthStrikethrough",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-gmfautolink-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "https://example.com\n"
+      ],
+      "setup": [
+        [
+          "SetGFMAutoLink",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-gmfautolink-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "https://example.com\n"
+      ],
+      "setup": [
+        [
+          "SetGFMAutoLink",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-footnotes-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "a[^1]\n\n[^1]: b\n"
+      ],
+      "setup": [
+        [
+          "SetFootnotes",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-footnotes-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "a[^1]\n\n[^1]: b\n"
+      ],
+      "setup": [
+        [
+          "SetFootnotes",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-toc-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "[toc]\n\n# a\n"
+      ],
+      "setup": [
+        [
+          "SetToC",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-toc-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "[toc]\n\n# a\n"
+      ],
+      "setup": [
+        [
+          "SetToC",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-headingid-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n"
+      ],
+      "setup": [
+        [
+          "SetHeadingID",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-headingid-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n"
+      ],
+      "setup": [
+        [
+          "SetHeadingID",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-autospace-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "中文abc中文\n"
+      ],
+      "setup": [
+        [
+          "SetAutoSpace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-autospace-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "中文abc中文\n"
+      ],
+      "setup": [
+        [
+          "SetAutoSpace",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-fixtermtypo-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "github 和 javascript\n"
+      ],
+      "setup": [
+        [
+          "SetFixTermTypo",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-fixtermtypo-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "github 和 javascript\n"
+      ],
+      "setup": [
+        [
+          "SetFixTermTypo",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-emoji-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ":heart:\n"
+      ],
+      "setup": [
+        [
+          "SetEmoji",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-emoji-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ":heart:\n"
+      ],
+      "setup": [
+        [
+          "SetEmoji",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-headinganchor-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n"
+      ],
+      "setup": [
+        [
+          "SetHeadingAnchor",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-headinganchor-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n"
+      ],
+      "setup": [
+        [
+          "SetHeadingAnchor",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlinemath-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$a+b$\n"
+      ],
+      "setup": [
+        [
+          "SetInlineMath",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlinemath-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$a+b$\n"
+      ],
+      "setup": [
+        [
+          "SetInlineMath",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlinemathdigit-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$1+1$\n"
+      ],
+      "setup": [
+        [
+          "SetInlineMath",
+          true
+        ],
+        [
+          "SetInlineMathAllowDigitAfterOpenMarker",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlinemathdigit-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$1+1$\n"
+      ],
+      "setup": [
+        [
+          "SetInlineMath",
+          true
+        ],
+        [
+          "SetInlineMathAllowDigitAfterOpenMarker",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-setext-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "a\n===\n"
+      ],
+      "setup": [
+        [
+          "SetSetext",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-setext-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "a\n===\n"
+      ],
+      "setup": [
+        [
+          "SetSetext",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-yaml-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "---\na: b\n---\n\n正文\n"
+      ],
+      "setup": [
+        [
+          "SetYamlFrontMatter",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-yaml-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "---\na: b\n---\n\n正文\n"
+      ],
+      "setup": [
+        [
+          "SetYamlFrontMatter",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-blockref-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "引用 ((20210101120000-abcdefg \"x\"))\n"
+      ],
+      "setup": [
+        [
+          "SetBlockRef",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-blockref-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "引用 ((20210101120000-abcdefg \"x\"))\n"
+      ],
+      "setup": [
+        [
+          "SetBlockRef",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-fileref-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<<assets/a.pdf/20210101120000-abcdefg \"锚文本\">>\n"
+      ],
+      "setup": [
+        [
+          "SetFileAnnotationRef",
+          true
+        ],
+        [
+          "SetTextMark",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-fileref-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<<assets/a.pdf/20210101120000-abcdefg \"锚文本\">>\n"
+      ],
+      "setup": [
+        [
+          "SetFileAnnotationRef",
+          false
+        ],
+        [
+          "SetTextMark",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-mark-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "==x==\n"
+      ],
+      "setup": [
+        [
+          "SetMark",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-mark-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "==x==\n"
+      ],
+      "setup": [
+        [
+          "SetMark",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-kramdownial-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n{: id=\"x\" class=\"y\"}\n"
+      ],
+      "setup": [
+        [
+          "SetKramdownIAL",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-kramdownial-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n{: id=\"x\" class=\"y\"}\n"
+      ],
+      "setup": [
+        [
+          "SetKramdownIAL",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-tag-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "#a# 文本\n"
+      ],
+      "setup": [
+        [
+          "SetTag",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-tag-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "#a# 文本\n"
+      ],
+      "setup": [
+        [
+          "SetTag",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-imgspace-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b c.png)\n"
+      ],
+      "setup": [
+        [
+          "SetImgPathAllowSpace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-imgspace-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b c.png)\n"
+      ],
+      "setup": [
+        [
+          "SetImgPathAllowSpace",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-superblock-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "{{{row\na\n}}}\n"
+      ],
+      "setup": [
+        [
+          "SetSuperBlock",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-superblock-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "{{{row\na\n}}}\n"
+      ],
+      "setup": [
+        [
+          "SetSuperBlock",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-customblock-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ";;;plugin:test\ncontent\n;;;\n"
+      ],
+      "setup": [
+        [
+          "SetCustomBlock",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-customblock-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ";;;plugin:test\ncontent\n;;;\n"
+      ],
+      "setup": [
+        [
+          "SetCustomBlock",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-sup-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "^x^\n"
+      ],
+      "setup": [
+        [
+          "SetSup",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-sup-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "^x^\n"
+      ],
+      "setup": [
+        [
+          "SetSup",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-sub-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "~x~\n"
+      ],
+      "setup": [
+        [
+          "SetSub",
+          true
+        ],
+        [
+          "SetGFMStrikethrough1",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-sub-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "~x~\n"
+      ],
+      "setup": [
+        [
+          "SetSub",
+          false
+        ],
+        [
+          "SetGFMStrikethrough1",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlineasterisk-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "*x*\n"
+      ],
+      "setup": [
+        [
+          "SetInlineAsterisk",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlineasterisk-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "*x*\n"
+      ],
+      "setup": [
+        [
+          "SetInlineAsterisk",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlineunderscore-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "_x_\n"
+      ],
+      "setup": [
+        [
+          "SetInlineUnderscore",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-inlineunderscore-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "_x_\n"
+      ],
+      "setup": [
+        [
+          "SetInlineUnderscore",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-gitconflict-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<<<<<<< HEAD\na\n=======\nb\n>>>>>>> branch\n"
+      ],
+      "setup": [
+        [
+          "SetGitConflict",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-gitconflict-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<<<<<<< HEAD\na\n=======\nb\n>>>>>>> branch\n"
+      ],
+      "setup": [
+        [
+          "SetGitConflict",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-linkref-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "[a][b]\n\n[b]: /c\n"
+      ],
+      "setup": [
+        [
+          "SetLinkRef",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-linkref-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "[a][b]\n\n[b]: /c\n"
+      ],
+      "setup": [
+        [
+          "SetLinkRef",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-indentcode-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "    x\n"
+      ],
+      "setup": [
+        [
+          "SetIndentCodeBlock",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-indentcode-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "    x\n"
+      ],
+      "setup": [
+        [
+          "SetIndentCodeBlock",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-dataimage-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](data:image/png;base64,AAAA)\n"
+      ],
+      "setup": [
+        [
+          "SetDataImage",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-dataimage-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](data:image/png;base64,AAAA)\n"
+      ],
+      "setup": [
+        [
+          "SetDataImage",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-htmltag2textmark-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<u>x</u>\n"
+      ],
+      "setup": [
+        [
+          "SetHTMLTag2TextMark",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-htmltag2textmark-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<u>x</u>\n"
+      ],
+      "setup": [
+        [
+          "SetHTMLTag2TextMark",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-paragraphspace-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "   x\n"
+      ],
+      "setup": [
+        [
+          "SetParagraphBeginningSpace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-paragraphspace-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "   x\n"
+      ],
+      "setup": [
+        [
+          "SetParagraphBeginningSpace",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-chineseparagraphspace-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "x\n"
+      ],
+      "setup": [
+        [
+          "SetChineseParagraphBeginningSpace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-chineseparagraphspace-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "x\n"
+      ],
+      "setup": [
+        [
+          "SetChineseParagraphBeginningSpace",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-ensurelip-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- \n  - a\n"
+      ],
+      "setup": [
+        [
+          "SetEnsureListItemParagraph",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-ensurelip-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- \n  - a\n"
+      ],
+      "setup": [
+        [
+          "SetEnsureListItemParagraph",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-callout-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "> [!NOTE]\n> x\n"
+      ],
+      "setup": [
+        [
+          "SetCallout",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-callout-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "> [!NOTE]\n> x\n"
+      ],
+      "setup": [
+        [
+          "SetCallout",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-tabs-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "{{{tabs\n{{{tab 页签}}}\n内容\n}}}\n"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-tabs-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "{{{tabs\n{{{tab 页签}}}\n内容\n}}}\n"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-arbitrarytask-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [/] a\n"
+      ],
+      "setup": [
+        [
+          "SetArbitraryTaskListItemMarker",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-arbitrarytask-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [/] a\n"
+      ],
+      "setup": [
+        [
+          "SetArbitraryTaskListItemMarker",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-taskclass-vditor",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [ ] a\n"
+      ],
+      "setup": [
+        [
+          "SetGFMTaskListItemClass",
+          "vditor-task"
+        ]
+      ]
+    },
+    {
+      "id": "opt-taskclass-custom",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [ ] a\n"
+      ],
+      "setup": [
+        [
+          "SetGFMTaskListItemClass",
+          "my-task"
+        ]
+      ]
+    },
+    {
+      "id": "opt-datatask-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [x] a\n"
+      ],
+      "setup": [
+        [
+          "SetDataTask",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-datatask-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [x] a\n"
+      ],
+      "setup": [
+        [
+          "SetDataTask",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-softbreak-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "a\nb\n"
+      ],
+      "setup": [
+        [
+          "SetSoftBreak2HardBreak",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-softbreak-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "a\nb\n"
+      ],
+      "setup": [
+        [
+          "SetSoftBreak2HardBreak",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-liststyle-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- a\n1. b\n"
+      ],
+      "setup": [
+        [
+          "SetRenderListStyle",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-liststyle-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- a\n1. b\n"
+      ],
+      "setup": [
+        [
+          "SetRenderListStyle",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-highlight-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "setup": [
+        [
+          "SetCodeSyntaxHighlight",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-highlight-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "setup": [
+        [
+          "SetCodeSyntaxHighlight",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-highlight-linenum",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "setup": [
+        [
+          "SetCodeSyntaxHighlight",
+          true
+        ],
+        [
+          "SetCodeSyntaxHighlightLineNum",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-highlight-inline",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "setup": [
+        [
+          "SetCodeSyntaxHighlight",
+          true
+        ],
+        [
+          "SetCodeSyntaxHighlightInlineStyle",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-highlight-style",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "setup": [
+        [
+          "SetCodeSyntaxHighlight",
+          true
+        ],
+        [
+          "SetCodeSyntaxHighlightStyleName",
+          "monokai"
+        ]
+      ]
+    },
+    {
+      "id": "opt-lazyload-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b.png)\n"
+      ],
+      "setup": [
+        [
+          "SetImageLazyLoading",
+          "loading.png"
+        ]
+      ]
+    },
+    {
+      "id": "opt-imgtag-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b.png)\n"
+      ],
+      "setup": [
+        [
+          "SetImgTag",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-imgtag-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b.png)\n"
+      ],
+      "setup": [
+        [
+          "SetImgTag",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-preventencode-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b c.png)\n"
+      ],
+      "setup": [
+        [
+          "SetPreventEncodeLinkSpace",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-preventencode-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b c.png)\n"
+      ],
+      "setup": [
+        [
+          "SetPreventEncodeLinkSpace",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-sanitize-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<script>alert(1)</script>\n"
+      ],
+      "setup": [
+        [
+          "SetSanitize",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-sanitize-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<script>alert(1)</script>\n"
+      ],
+      "setup": [
+        [
+          "SetSanitize",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "opt-unorderedmarker-dash",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- a\n- b\n"
+      ],
+      "setup": [
+        [
+          "SetUnorderedListMarker",
+          "-"
+        ]
+      ]
+    },
+    {
+      "id": "opt-unorderedmarker-plus",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- a\n- b\n"
+      ],
+      "setup": [
+        [
+          "SetUnorderedListMarker",
+          "+"
+        ]
+      ]
+    },
+    {
+      "id": "opt-ialidname-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n{: id=\"x\"}\n"
+      ],
+      "setup": [
+        [
+          "SetKramdownIAL",
+          true
+        ],
+        [
+          "SetKramdownIALIDRenderName",
+          "custom-id"
+        ]
+      ]
+    },
+    {
+      "id": "opt-ialidname-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# a\n{: id=\"x\"}\n"
+      ],
+      "setup": [
+        [
+          "SetKramdownIAL",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-exporttasknormalize-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [/] a\n"
+      ],
+      "setup": [
+        [
+          "SetExportNormalizeTaskListMarker",
+          true
+        ],
+        [
+          "SetArbitraryTaskListItemMarker",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-exporttasknormalize-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [/] a\n"
+      ],
+      "setup": [
+        [
+          "SetExportNormalizeTaskListMarker",
+          false
+        ],
+        [
+          "SetArbitraryTaskListItemMarker",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-spellcheck-on",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "spell\n"
+      ],
+      "setup": [
+        [
+          "SetSpellcheck",
+          true
+        ],
+        [
+          "SetProtyleWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "opt-spellcheck-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "spell\n"
+      ],
+      "setup": [
+        [
+          "SetSpellcheck",
+          false
+        ],
+        [
+          "SetProtyleWYSIWYG",
+          true
+        ]
+      ]
+    }
+  ]
+}

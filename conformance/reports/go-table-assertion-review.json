@@ -1,0 +1,1594 @@
+{
+  "description": "Go AST review of every original function with an exported table driver. Only direct exported API/argument equality contracts are marked covered; unmatched assertions and state transitions remain explicit.",
+  "status_counts": {
+    "additional_assertions_or_state_require_port": 4,
+    "table_only_assertions": 107
+  },
+  "tests": [
+    {
+      "source": "test/autolink_test.go",
+      "test": "TestAutoLink",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 64,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_query_embed_test.go",
+      "test": "TestBlockQueryEmbed",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 30,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_ref_test.go",
+      "test": "TestBlockRef",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 34,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCallout2Blockquote",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 44,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestBlockquote2Callout",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 77,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelSuperBlock",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 104,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestBlocks2Ps",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 135,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestBlocks2Hs",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 166,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestUL2TL",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 194,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestTL2OL",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 221,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelList",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 249,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelBlockquote",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 276,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelCallout",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 304,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestUL2OL",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 329,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestOL2UL",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 354,
+          "expression": "test.to != ovHTML",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/callout_test.go",
+      "test": "TestCallout",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 47,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/chinese_paragraph_beginning_space_test.go",
+      "test": "TestChineseParagraphBeginningSpace",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 35,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_block_html_renderjs_test.go",
+      "test": "TestJSCodeBlock",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 32,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_go_test.go",
+      "test": "TestCodeSyntaxHighlightGo",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 38,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightDetectLang",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 29,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightDetectLang1",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 56,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightLineNum",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 116,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlight",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 132,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightInline",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 150,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightStyle",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 167,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightOff",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 184,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskHTML",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 44,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskDisabledHTML",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 63,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskMd2BlockDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 86,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskNoClassHTML",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 107,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskCustomMarker",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 138,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/dataimage_test.go",
+      "test": "TestDataImageDisable",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 31,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/debug_test.go",
+      "test": "TestDebug",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 149,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/disable_indent_code_block_test.go",
+      "test": "TestDisableIndentCodeBlock",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 32,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/echarts_json_renderer_test.go",
+      "test": "TestEChartsJSONRenderer",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 38,
+          "expression": "test.to != jsonStr",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/emoji_test.go",
+      "test": "TestEmoji",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 55,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/file_annotation_ref_test.go",
+      "test": "TestFileAnnotationRef",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 110,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/footnotes_test.go",
+      "test": "TestFootnotes",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 61,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormat",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 111,
+          "expression": "test.formatted != formatted",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatArbitraryTaskListItemMarker",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 130,
+          "expression": "test.formatted != formatted",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatUnorderedListMarker",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 146,
+          "expression": "test.formatted != formatted",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/gfm_spec_test.go",
+      "test": "TestGFMSpec",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 76,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/gitconflict_test.go",
+      "test": "TestGitConflict",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 31,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/h2m_test.go",
+      "test": "TestHTML2Md",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 348,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/h2m_test.go",
+      "test": "TestHTML2MdDisableSyntax",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 417,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/h2p_test.go",
+      "test": "TestHTML2BlockDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 40,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/h2v_test.go",
+      "test": "TestHTML2VditorDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 35,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestHeadingID",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 37,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestHeadingAnchor",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 78,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestDisableHeadingID",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 93,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/html_entity_test.go",
+      "test": "TestHTMLEntity",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 29,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/image_lazy_loading_test.go",
+      "test": "TestImageLazyLoading",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 31,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/img_path_space_test.go",
+      "test": "TestImgPathSpace",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 31,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/json_renderer_test.go",
+      "test": "TestJSONRenderer",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 67,
+          "expression": "test.to != jsonStr",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/kityminder_json_renderer_test.go",
+      "test": "TestKityMinderJSONRenderer",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 35,
+          "expression": "test.to != jsonStr",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/kramdown_block_ial_test.go",
+      "test": "TestKramdownBlockIALs",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 58,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/kramdown_block_ial_test.go",
+      "test": "TestKramdownBlockIALIDName",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 82,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/kramdown_span_ial_test.go",
+      "test": "TestKramdownSpanIALs",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 44,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestLinkBase",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 40,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestLinkBasePrefix",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 75,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/list_item_nested_test.go",
+      "test": "TestEnsureListItemParagraph",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 45,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/list_item_nested_test.go",
+      "test": "TestDefaultNestedList",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 65,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 174,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMDisableSyntax",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 230,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMWithAutoLink",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 268,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMWithAutoLinkState",
+      "status": "additional_assertions_or_state_require_port",
+      "assertions": [
+        {
+          "line": 286,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        },
+        {
+          "line": 297,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": [
+        {
+          "line": 273,
+          "expression": "TestMd2BlockDOMWithAutoLinkState",
+          "reason": "multiple or nonstandard table loops may carry engine state between API calls",
+          "covered_by_table_contract": false
+        },
+        {
+          "line": 291,
+          "expression": "luteEngine.Md2BlockDOMWithAutoLink(md2BlockDOMWithAutoLinkStateTests[0].from, true)",
+          "reason": "engine API invocation outside the exported table loop can affect state",
+          "covered_by_table_contract": false
+        }
+      ]
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMWithAutoLinkWhenGFMAutoLinkDisabled",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 315,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/m2v_test.go",
+      "test": "TestMd2VditorDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 69,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/m2v_test.go",
+      "test": "TestMd2VditorIRDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 106,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/mark_test.go",
+      "test": "TestMark",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 43,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/mark_test.go",
+      "test": "TestMarkDisable",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 67,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestMath",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 48,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestInlineMath",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 65,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestInlineMathDisabled",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 81,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestInlineMathDigit",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 99,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/mindmap_test.go",
+      "test": "TestMindmap",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 33,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2h_test.go",
+      "test": "TestBlockDOM2HTML",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 56,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestInlineMd2BlockDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 53,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2InlineBlockDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 93,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2StdMd",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 150,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2Md",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 184,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2Content",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 226,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2EscapeMarkerContent",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 258,
+          "expression": "test.to != result",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/parse_inline_test.go",
+      "test": "TestInline",
+      "status": "additional_assertions_or_state_require_port",
+      "assertions": [
+        {
+          "line": 35,
+          "expression": "ast.NodeParagraph != tree.Root.FirstChild.Type",
+          "reason": "condition does not compare the table's expected field",
+          "covered_by_table_contract": false
+        },
+        {
+          "line": 39,
+          "expression": "test.to != output",
+          "reason": "API output data flow is not a single direct assignment",
+          "covered_by_table_contract": false
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/parse_test.go",
+      "test": "TestParse",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 284,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/protyle_export_md_test.go",
+      "test": "TestProtyleExportMd",
+      "status": "additional_assertions_or_state_require_port",
+      "assertions": [
+        {
+          "line": 76,
+          "expression": "test.to != kmd",
+          "reason": "API or argument expressions differ from the exported driver",
+          "covered_by_table_contract": false
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/render_list_style_test.go",
+      "test": "TestRenderListStyle",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 32,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/render_list_style_test.go",
+      "test": "TestRenderListStyleVditor",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 51,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/render_list_style_test.go",
+      "test": "TestRenderListStyleVditorIR",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 70,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/sanitizer_test.go",
+      "test": "TestSanitizer",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 50,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/sanitizer_test.go",
+      "test": "TestSanitizerVditor",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 76,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/setext_test.go",
+      "test": "TestSetext",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 30,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/setext_test.go",
+      "test": "TestDisableSetext",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 45,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/space_test.go",
+      "test": "TestAutoSpace",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 96,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/spin_block_test.go",
+      "test": "TestSpinBlockDOM",
+      "status": "additional_assertions_or_state_require_port",
+      "assertions": [
+        {
+          "line": 342,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        },
+        {
+          "line": 347,
+          "expression": "html != spunAgain",
+          "reason": "condition does not compare the table's expected field",
+          "covered_by_table_contract": false
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/spin_block_test.go",
+      "test": "TestSpinBlockDOMStrikethrough1Disabled",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 385,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/spin_ir_test.go",
+      "test": "TestSpinVditorIRDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 92,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/spin_sv_test.go",
+      "test": "TestSpinVditorSVDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 100,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/spin_wysiwyg_test.go",
+      "test": "TestSpinVditorDOM",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 204,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestStrikethrough",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 34,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestStrikethroughDisabled",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 53,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/super_block_test.go",
+      "test": "TestSuperBlock",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 39,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/supsub_test.go",
+      "test": "TestSupSub",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 41,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/tag_test.go",
+      "test": "TestTag",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 32,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/tag_test.go",
+      "test": "TestTagDisable",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 49,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/term_typo_test.go",
+      "test": "TestTermTypo",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 39,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/term_typo_test.go",
+      "test": "TestTermTypoFormat",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 57,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/toc_test.go",
+      "test": "TestToC",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 33,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/v2m_test.go",
+      "test": "TestVditorDOM2Md",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 149,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/v2m_test.go",
+      "test": "TestVditorIRDOM2Md",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 177,
+          "expression": "test.to != md",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    },
+    {
+      "source": "test/yaml_front_matter_test.go",
+      "test": "TestYamlFrontMatter",
+      "status": "table_only_assertions",
+      "assertions": [
+        {
+          "line": 30,
+          "expression": "test.to != html",
+          "reason": "expected field is compared directly to the exported API with identical argument expressions",
+          "covered_by_table_contract": true
+        }
+      ],
+      "additional_checks": []
+    }
+  ]
+}

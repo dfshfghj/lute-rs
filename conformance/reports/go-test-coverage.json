@@ -1,0 +1,2766 @@
+{
+  "description": "Migration inventory. Table contracts do not imply all original function assertions were ported. Missing areas are not marked ignored or passing.",
+  "build_profiles": [
+    "native-no-chroma",
+    "javascript"
+  ],
+  "omitted_capabilities": [
+    "chroma"
+  ],
+  "profile_expectations": "rust/crates/lute-core/tests/fixtures/build_profiles.json",
+  "original_test_functions": 285,
+  "status_counts": {
+    "go_harness_specific": 3,
+    "go_runtime_specific": 3,
+    "native_go_chroma_specific": 2,
+    "partially_ported_assertions": 10,
+    "ported_ast_assertions": 1,
+    "ported_function_assertions": 7,
+    "ported_helper_assertions": 12,
+    "ported_html_spec_652_cases": 1,
+    "ported_structural_assertions": 119,
+    "ported_table_assertions_verified": 102,
+    "ported_tabs_assertions": 22,
+    "unavailable_implementation": 3
+  },
+  "tests": [
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestTextBundleAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_text_bundle_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestHTML2TextAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_h_t_m_l2_text_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestSpaceAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_space_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestTermsAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_terms_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestLinkBaseAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_link_base_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestVditorRoundTripAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_vditor_round_trip_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestBlockDOMTextAPI",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_block_d_o_m_text_a_p_i"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestProtyleExportMdNodeSyncAPI",
+      "tables": [],
+      "status": "unavailable_implementation",
+      "gaps": [
+        {
+          "source": "test/api_gap_test.go",
+          "test": "TestProtyleExportMdNodeSyncAPI",
+          "status": "unavailable",
+          "branch": "",
+          "reason": "Rust has no public ProtyleExportMdNodeSync equivalent; not substituted with a whole-tree renderer"
+        }
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestTL2ULRemovesTaskMarker",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_t_l2_u_l_removes_task_marker"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestSpinMergesAdjacentSameSpan",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_spin_merges_adjacent_same_span"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestBlockDOM2TextLenIgnoresMarkup",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_block_d_o_m2_text_len_ignores_markup"
+      ]
+    },
+    {
+      "source": "test/api_gap_test.go",
+      "test": "TestSetterSmoke",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_setter_smoke"
+      ]
+    },
+    {
+      "source": "test/autolink_test.go",
+      "test": "TestAutoLink",
+      "tables": [
+        "autoLinkTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_query_embed_test.go",
+      "test": "TestBlockQueryEmbed",
+      "tables": [
+        "blockQueryEmbedTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_ref_test.go",
+      "test": "TestBlockRef",
+      "tables": [
+        "blockRefTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCallout2Blockquote",
+      "tables": [
+        "callout2BlockquoteTest"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestBlockquote2Callout",
+      "tables": [
+        "blockquote2CalloutTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelSuperBlock",
+      "tables": [
+        "cancelSuperBlockTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestBlocks2Ps",
+      "tables": [
+        "blocks2psTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestBlocks2Hs",
+      "tables": [
+        "blocks2hsTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestUL2TL",
+      "tables": [
+        "ul2tlTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestTL2OL",
+      "tables": [
+        "tl2olTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelList",
+      "tables": [
+        "cancelListTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelBlockquote",
+      "tables": [
+        "cancelBlockquoteTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestCancelCallout",
+      "tables": [
+        "cancelCalloutTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestUL2OL",
+      "tables": [
+        "ul2olTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/block_type_conversion_test.go",
+      "test": "TestOL2UL",
+      "tables": [
+        "ol2ulTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/callout_backtick_test.go",
+      "test": "TestCalloutBacktickInput",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_callout_backtick"
+      ]
+    },
+    {
+      "source": "test/callout_icon_test.go",
+      "test": "TestCalloutImageIconParse",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_callout_image_parse"
+      ]
+    },
+    {
+      "source": "test/callout_icon_test.go",
+      "test": "TestCalloutImageIconDoesNotConsumeTitle",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_callout_icon_preserves_title"
+      ]
+    },
+    {
+      "source": "test/callout_icon_test.go",
+      "test": "TestCalloutImageIconRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_callout_image_roundtrip"
+      ]
+    },
+    {
+      "source": "test/callout_icon_test.go",
+      "test": "TestCalloutEmptyTitleRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_callout_empty_title"
+      ]
+    },
+    {
+      "source": "test/callout_test.go",
+      "test": "TestCallout",
+      "tables": [
+        "calloutTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/callout_test.go",
+      "test": "TestHTML2MdCallout",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_html2md_callout"
+      ]
+    },
+    {
+      "source": "test/chinese_paragraph_beginning_space_test.go",
+      "test": "TestChineseParagraphBeginningSpace",
+      "tables": [
+        "chineseParagraphBeginningSpaceTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/chroma_test.go",
+      "test": "TestChroma",
+      "tables": [],
+      "status": "native_go_chroma_specific",
+      "gaps": [
+        {
+          "source": "test/chroma_test.go",
+          "test": "TestChroma",
+          "status": "native_go_chroma",
+          "branch": "entire function",
+          "reason": "Direct Chroma library contract; not part of the JS-targeted Rust engine"
+        }
+      ]
+    },
+    {
+      "source": "test/code_block_html_renderjs_test.go",
+      "test": "TestJSCodeBlock",
+      "tables": [
+        "jsCodeBlockTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_go_test.go",
+      "test": "TestCodeSyntaxHighlightGo",
+      "tables": [
+        "codeSyntaxHighlightGoTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightDetectLang",
+      "tables": [
+        "issue22Tests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightDetectLang1",
+      "tables": [
+        "codeSyntaxHighlightDetectLang1Tests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightIssue17",
+      "tables": [],
+      "status": "native_go_chroma_specific",
+      "gaps": [
+        {
+          "source": "test/code_syntax_highlight_test.go",
+          "test": "TestCodeSyntaxHighlightIssue17",
+          "status": "native_go_chroma",
+          "branch": "entire function",
+          "reason": "Native Go Chroma HTML; no matching Rust highlighter backend"
+        }
+      ]
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightLineNum",
+      "tables": [
+        "codeSyntaxHighlightLineNumTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlight",
+      "tables": [
+        "codeSyntaxHighlightTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightInline",
+      "tables": [
+        "codeSyntaxHighlightInlineTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightStyle",
+      "tables": [
+        "codeSyntaxHighlightStyleTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/code_syntax_highlight_test.go",
+      "test": "TestCodeSyntaxHighlightOff",
+      "tables": [
+        "codeSyntaxHighlightOffTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/commonmark_spec_test.go",
+      "test": "TestSpec",
+      "tables": [],
+      "status": "ported_html_spec_652_cases",
+      "rust": "tests/go_commonmark_html.rs"
+    },
+    {
+      "source": "test/custom_block_test.go",
+      "test": "TestCustomBlockOptionAndFence",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_custom_block_info",
+        "tests/go_editor_structural.rs::go_custom_block_fences"
+      ]
+    },
+    {
+      "source": "test/custom_block_test.go",
+      "test": "TestCustomBlockSafeFallbackRenderers",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_custom_block_safe_fallback"
+      ],
+      "gaps": [
+        {
+          "source": "test/custom_block_test.go",
+          "test": "TestCustomBlockSafeFallbackRenderers",
+          "status": "partial",
+          "branch": "",
+          "reason": "Missing render.NewProtyleExportDocxRenderer; assertions: output excludes onmouseover=\"; output contains escaped data-info; output excludes raw <script> and includes <pre>escapedContent</pre>"
+        },
+        {
+          "source": "test/custom_block_test.go",
+          "test": "TestCustomBlockSafeFallbackRenderers",
+          "status": "partial",
+          "branch": "",
+          "reason": "Missing render.NewProtyleExportRenderer; assertions: output excludes onmouseover=\"; output contains escaped data-info; output excludes raw <script> and includes <pre>escapedContent</pre>"
+        }
+      ]
+    },
+    {
+      "source": "test/custom_block_test.go",
+      "test": "TestCustomBlockEntityRoundTripAndRenderedSubtree",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_custom_block_entity_roundtrip"
+      ]
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskHTML",
+      "tables": [
+        "dataTaskHTMLTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskDisabledHTML",
+      "tables": [
+        "dataTaskDisabledHTMLTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskMd2BlockDOM",
+      "tables": [
+        "dataTaskMd2BlockDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskNoClassHTML",
+      "tables": [
+        "dataTaskNoClassHTMLTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestDataTaskCustomMarker",
+      "tables": [
+        "dataTaskCustomMarkerTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/data_task_test.go",
+      "test": "TestBlockDOM2StdMdTaskMarkerNormalization",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_task_marker_normalization"
+      ]
+    },
+    {
+      "source": "test/dataimage_test.go",
+      "test": "TestDataImageDisable",
+      "tables": [
+        "dataImageTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/debug_test.go",
+      "test": "TestDebug",
+      "tables": [
+        "debugTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/disable_indent_code_block_test.go",
+      "test": "TestDisableIndentCodeBlock",
+      "tables": [
+        "disableIndentCodeBlockTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/echarts_json_renderer_test.go",
+      "test": "TestEChartsJSONRenderer",
+      "tables": [
+        "echartsJSONRendererTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/emoji_test.go",
+      "test": "TestEmoji",
+      "tables": [
+        "emojiTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/emoji_test.go",
+      "test": "TestCleanEmoji",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_clean_emoji"
+      ]
+    },
+    {
+      "source": "test/emoji_unicode17_test.go",
+      "test": "TestUnicode17Emoji",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_unicode17_emoji"
+      ]
+    },
+    {
+      "source": "test/file_annotation_ref_test.go",
+      "test": "TestFileAnnotationRefPaths",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_file_annotation_ref_paths"
+      ]
+    },
+    {
+      "source": "test/file_annotation_ref_test.go",
+      "test": "TestFileAnnotationRefInvalid",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_file_annotation_ref_invalid"
+      ]
+    },
+    {
+      "source": "test/file_annotation_ref_test.go",
+      "test": "TestFileAnnotationRef",
+      "tables": [
+        "fileAnnotationRefTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/flashcard_occlusion_test.go",
+      "test": "TestFlashcardOcclusionIDRoundTrip",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "src/html2md.rs::go_flashcard_occlusion_id_round_trip"
+      ],
+      "gaps": [
+        {
+          "source": "test/flashcard_occlusion_test.go",
+          "test": "TestFlashcardOcclusionIDRoundTrip",
+          "status": "partial",
+          "branch": "",
+          "reason": "ProtyleExportRenderer unavailable; export-only absence assertion unported; AST, node render, Markdown round-trip, standard HTML and preview assertions retained"
+        }
+      ]
+    },
+    {
+      "source": "test/footnotes_test.go",
+      "test": "TestFootnoteLabelInlineTokens",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_footnote_label_inline_tokens"
+      ]
+    },
+    {
+      "source": "test/footnotes_test.go",
+      "test": "TestFootnotes",
+      "tables": [
+        "fnTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormat",
+      "tables": [
+        "formatTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatArbitraryTaskListItemMarker",
+      "tables": [
+        "formatArbitraryTaskListItemMarkerTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatUnorderedListMarker",
+      "tables": [
+        "formatUnorderedListMarkerTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatCases",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_format_cases"
+      ]
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatNodeSync",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_format_node_sync_renderer"
+      ],
+      "gaps": [
+        {
+          "source": "test/format_test.go",
+          "test": "TestFormatNodeSync",
+          "status": "partial",
+          "branch": "",
+          "reason": "Rust has no public FormatNodeSync equivalent; original FormatRenderer assertion not sufficient for full migration"
+        }
+      ]
+    },
+    {
+      "source": "test/format_test.go",
+      "test": "TestFormatTaskListHTMLBlock",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_format_task_list_h_t_m_l_block"
+      ]
+    },
+    {
+      "source": "test/gfm_spec_test.go",
+      "test": "TestGFMSpec",
+      "tables": [
+        "gfmSpecTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/gitconflict_test.go",
+      "test": "TestGitConflict",
+      "tables": [
+        "gitConflictTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/h2m_code_banner_test.go",
+      "test": "TestHTMLCodeBlockBanner",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_h_t_m_l_code_block_banner"
+      ]
+    },
+    {
+      "source": "test/h2m_code_banner_test.go",
+      "test": "TestHTMLCodeBlockBannerPreservesUnrecognizedContent",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_h_t_m_l_code_block_banner_preserves_unrecognized_content"
+      ]
+    },
+    {
+      "source": "test/h2m_test.go",
+      "test": "TestHTML2Md",
+      "tables": [
+        "html2MdTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/h2m_test.go",
+      "test": "TestHTML2MdLanguageMath",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_h_t_m_l2_md_language_math"
+      ]
+    },
+    {
+      "source": "test/h2m_test.go",
+      "test": "TestHTML2MdDisableSyntax",
+      "tables": [
+        "html2MdDisableSyntaxTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/h2p_test.go",
+      "test": "TestHTML2BlockDOM",
+      "tables": [
+        "html2BlockDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/h2p_test.go",
+      "test": "TestHTML2BlockDOMTableCaption",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_html2blockdom_table_caption"
+      ]
+    },
+    {
+      "source": "test/h2v_test.go",
+      "test": "TestHTML2VditorDOM",
+      "tables": [
+        "html2VditorDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/h2v_test.go",
+      "test": "TestHTML2VditorDOMToC",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_html2vditor_dom_toc"
+      ]
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestHeadingID",
+      "tables": [
+        "headingIDTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestHeadingIDRaw",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_heading_i_d_raw"
+      ]
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestHeadingAnchor",
+      "tables": [
+        "headingAnchorTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/headingid_test.go",
+      "test": "TestDisableHeadingID",
+      "tables": [
+        "headingIDDisableTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/html_block_test.go",
+      "test": "TestHTMLBlockDataContentRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_h_t_m_l_block_data_content_round_trip"
+      ]
+    },
+    {
+      "source": "test/html_block_test.go",
+      "test": "TestHTMLBlockOpenTagConsumesWholeLine",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_h_t_m_l_block_open_tag_consumes_whole_line"
+      ]
+    },
+    {
+      "source": "test/html_entity_test.go",
+      "test": "TestHTMLEntity",
+      "tables": [
+        "htmlEntityTests"
+      ],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/html_esc_test.go",
+      "test": "TestEscapeAttrVal",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/html_esc_test.go",
+      "test": "TestEscapeHTMLStr",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/html_esc_test.go",
+      "test": "TestEscapeString",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/html_escape_test.go",
+      "test": "TestHTML2TreeEscapedText",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/html_escape_test.go",
+      "test": "TestHTML2MarkdownEscapedText",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/html_test.go",
+      "test": "TestHTMLParse",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_html_parse"
+      ]
+    },
+    {
+      "source": "test/html_test.go",
+      "test": "TestHTMLParse0",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_html_parse0"
+      ]
+    },
+    {
+      "source": "test/html_text_style_test.go",
+      "test": "TestHTMLTextStyle",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_style_structural.rs::go_html_text_style"
+      ]
+    },
+    {
+      "source": "test/html_text_style_test.go",
+      "test": "TestHTMLTextStyleRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_style_structural.rs::go_html_text_style_round_trip"
+      ]
+    },
+    {
+      "source": "test/html_text_style_test.go",
+      "test": "TestHTMLQuotedFontFamilyRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/html2md.rs::go_html_quoted_font_family_round_trip"
+      ]
+    },
+    {
+      "source": "test/html_text_style_test.go",
+      "test": "TestMarkdownHTMLStyleBoundaries",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/html2md.rs::go_markdown_html_style_boundaries"
+      ]
+    },
+    {
+      "source": "test/html_text_style_test.go",
+      "test": "TestMarkdownHTMLTextStyle",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/html2md.rs::go_markdown_html_text_style"
+      ]
+    },
+    {
+      "source": "test/image_lazy_loading_test.go",
+      "test": "TestImageLazyLoading",
+      "tables": [
+        "imageLazyLoadingTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/image_title_data_attribute_test.go",
+      "test": "TestImageTitleDataAttribute",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_image_title_data_attribute"
+      ]
+    },
+    {
+      "source": "test/img_path_space_test.go",
+      "test": "TestImgPathSpace",
+      "tables": [
+        "imgPathSpaceTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/json_renderer_test.go",
+      "test": "TestJSONRenderer",
+      "tables": [
+        "JSONRendererTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/kityminder_json_renderer_test.go",
+      "test": "TestKityMinderJSONRenderer",
+      "tables": [
+        "kitymindJSONRendererTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/kramdown_block_ial_test.go",
+      "test": "TestKramdownBlockIALs",
+      "tables": [
+        "kramdownBlockIALTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/kramdown_block_ial_test.go",
+      "test": "TestKramdownBlockIALIDName",
+      "tables": [
+        "kramdownBlockIALIDNAmeTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/kramdown_span_ial_test.go",
+      "test": "TestKramdownSpanIALs",
+      "tables": [
+        "kramdownSpanIALTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestLinkBase",
+      "tables": [
+        "linkBaseTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestVditorLinkBaseDataImage",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_vditor_link_base_data_image"
+      ]
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestLinkBasePrefix",
+      "tables": [
+        "linkBasePrefixTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestVditorLinkBaseRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_vditor_link_base_round_trip"
+      ]
+    },
+    {
+      "source": "test/link_base_prefix_test.go",
+      "test": "TestProtyleLinkBaseRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_protyle_link_base_round_trip"
+      ]
+    },
+    {
+      "source": "test/link_dest_encode_test.go",
+      "test": "TestLinkDestEncode",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_link_dest_encode"
+      ]
+    },
+    {
+      "source": "test/link_dest_encode_test.go",
+      "test": "TestLinkDestDecode",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_link_dest_decode"
+      ]
+    },
+    {
+      "source": "test/link_dest_test.go",
+      "test": "TestGetLinkDest",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_get_link_dest"
+      ]
+    },
+    {
+      "source": "test/link_dest_test.go",
+      "test": "TestIsValidLinkDest",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_is_valid_link_dest"
+      ]
+    },
+    {
+      "source": "test/list_item_nested_test.go",
+      "test": "TestEnsureListItemParagraph",
+      "tables": [
+        "disableNestedListTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/list_item_nested_test.go",
+      "test": "TestDefaultNestedList",
+      "tables": [
+        "defaultNestedListTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/list_item_nested_test.go",
+      "test": "TestIssue17890EmptyListItemNoDuplicateParagraph",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_empty_list_items_have_at_most_one_empty_paragraph"
+      ]
+    },
+    {
+      "source": "test/list_setext_continuation_test.go",
+      "test": "TestFormatListSetextContinuation",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_format_list_setext_continuation"
+      ]
+    },
+    {
+      "source": "test/list_setext_continuation_test.go",
+      "test": "TestVditorDOMListSetextContinuation",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_vditor_dom_list_setext_continuation"
+      ]
+    },
+    {
+      "source": "test/list_setext_continuation_test.go",
+      "test": "TestSpinVditorSVListSetextContinuation",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_spin_vditor_sv_list_setext_continuation"
+      ]
+    },
+    {
+      "source": "test/list_setext_continuation_test.go",
+      "test": "TestSpinVditorSVThematicBreakAtDocumentStart",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_spin_vditor_sv_thematic_break_at_document_start"
+      ]
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOM",
+      "tables": [
+        "md2BlockDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMTaskMarkerFollowedByLink",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_task_marker_followed_by_link_keeps_original_list_kind"
+      ]
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMDisableSyntax",
+      "tables": [
+        "md2BlockDOMDisableSyntaxTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMWithAutoLink",
+      "tables": [
+        "md2BlockDOMWithAutoLinkTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMWithAutoLinkState",
+      "tables": [
+        "md2BlockDOMWithAutoLinkStateTests"
+      ],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_original_tables.rs::go_auto_link_warmup_does_not_leak_into_plain_blockdom"
+      ]
+    },
+    {
+      "source": "test/m2p_test.go",
+      "test": "TestMd2BlockDOMWithAutoLinkWhenGFMAutoLinkDisabled",
+      "tables": [
+        "md2BlockDOMWithAutoLinkGFMAutoLinkDisabledTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/m2v_test.go",
+      "test": "TestMd2VditorDOM",
+      "tables": [
+        "md2VditorDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/m2v_test.go",
+      "test": "TestMd2VditorIRDOM",
+      "tables": [
+        "md2VditorIRDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/mark_test.go",
+      "test": "TestMark",
+      "tables": [
+        "markTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/mark_test.go",
+      "test": "TestMarkDisable",
+      "tables": [
+        "markDisableTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/markdown_table_html_style_test.go",
+      "test": "TestMarkdownTableHTMLThemeStyles",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_markdown_table_html_theme_styles"
+      ]
+    },
+    {
+      "source": "test/markdown_table_html_style_test.go",
+      "test": "TestMarkdownTableHTMLThemeStyleBoundaries",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_markdown_table_html_theme_style_boundaries"
+      ]
+    },
+    {
+      "source": "test/markdown_table_structure_test.go",
+      "test": "TestMarkdownTableStructureRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_markdown_table_structure_round_trip"
+      ]
+    },
+    {
+      "source": "test/markdown_table_structure_test.go",
+      "test": "TestMarkdownTableLegacyTasks",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table.rs::go_markdown_table_legacy_tasks"
+      ]
+    },
+    {
+      "source": "test/markdown_table_structure_test.go",
+      "test": "TestHTMLTableStructureImport",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table.rs::go_html_table_structure_import"
+      ]
+    },
+    {
+      "source": "test/markdown_table_structure_test.go",
+      "test": "TestMarkdownTableStructureBoundaries",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_markdown_table_structure_boundaries"
+      ]
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestMath",
+      "tables": [
+        "mathTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestInlineMath",
+      "tables": [
+        "inlineMathTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestInlineMathDisabled",
+      "tables": [
+        "inlineMathDisabledTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/math_test.go",
+      "test": "TestInlineMathDigit",
+      "tables": [
+        "inlineMathDigitAllowTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/mindmap_block_test.go",
+      "test": "TestMindmapBlockDOMRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_mindmap_roundtrip"
+      ]
+    },
+    {
+      "source": "test/mindmap_block_test.go",
+      "test": "TestMindmapContainment",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_mindmap_containment"
+      ]
+    },
+    {
+      "source": "test/mindmap_test.go",
+      "test": "TestMindmap",
+      "tables": [
+        "mindmapTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2h_test.go",
+      "test": "TestBlockDOM2HTML",
+      "tables": [
+        "blockDOM2HTMLTest"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2h_test.go",
+      "test": "TestBlockDOM2RichHTML",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_style_structural.rs::go_blockdom2richhtml"
+      ]
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestInlineMd2BlockDOM",
+      "tables": [
+        "inlineMd2BlockDOM"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2InlineBlockDOM",
+      "tables": [
+        "blockDOM2InlineBlockDOM"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2StdMd",
+      "tables": [
+        "blockDOM2StdMd"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2Md",
+      "tables": [
+        "blockDOM2Md"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2Content",
+      "tables": [
+        "blockDOM2Content"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/p2p_test.go",
+      "test": "TestBlockDOM2EscapeMarkerContent",
+      "tables": [
+        "blockDOM2EscapeMarkerContent"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/panic_test.go",
+      "test": "TestRecover",
+      "tables": [],
+      "status": "go_runtime_specific",
+      "gaps": [
+        {
+          "source": "test/panic_test.go",
+          "test": "TestRecover",
+          "status": "go_runtime",
+          "branch": "entire function",
+          "reason": "Go goroutine/defer/recover and util.RecoverPanic do not have a matching Rust engine API"
+        }
+      ]
+    },
+    {
+      "source": "test/parse_block_test.go",
+      "test": "TestBlock",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_block"
+      ]
+    },
+    {
+      "source": "test/parse_inline_test.go",
+      "test": "TestInline",
+      "tables": [
+        "inlineTests"
+      ],
+      "status": "ported_ast_assertions",
+      "rust": "tests/go_inline_ast.rs"
+    },
+    {
+      "source": "test/parse_test.go",
+      "test": "TestParse",
+      "tables": [
+        "parseTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/parse_test.go",
+      "test": "TestCase1",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_case1_smoke"
+      ]
+    },
+    {
+      "source": "test/protyle_export_html_table_footnotes_test.go",
+      "test": "TestProtyleExportHTMLTableInFootnotes",
+      "tables": [],
+      "status": "unavailable_implementation",
+      "gaps": [
+        {
+          "source": "test/protyle_export_html_table_footnotes_test.go",
+          "test": "TestProtyleExportHTMLTableInFootnotes",
+          "status": "unavailable",
+          "branch": "entire function",
+          "reason": "Rust has no render.NewProtyleExportRenderer equivalent; HtmlRenderer/ProtylePreviewRenderer are distinct Go contracts and cannot replace it. Original test asserts export output plus footnote AST immutability after that renderer."
+        }
+      ]
+    },
+    {
+      "source": "test/protyle_export_md_test.go",
+      "test": "TestProtyleExportMd",
+      "tables": [
+        "protyleExportMdTests"
+      ],
+      "status": "ported_structural_assertions",
+      "rust": "tests/go_export_md.rs",
+      "reason": "Original parse + non-hybrid flatten + export renderer chain; all 20 rows asserted"
+    },
+    {
+      "source": "test/protyle_media_controls_test.go",
+      "test": "TestProtyleVideoControls",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_video_controls"
+      ]
+    },
+    {
+      "source": "test/protyle_media_controls_test.go",
+      "test": "TestProtyleAudioControls",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_audio_controls"
+      ]
+    },
+    {
+      "source": "test/protyle_merged_table_backslash_test.go",
+      "test": "TestBlockDOM2StdMdMergedTablePreservesBackslashContent",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_merged_table_markdown_backslash"
+      ]
+    },
+    {
+      "source": "test/protyle_merged_table_backslash_test.go",
+      "test": "TestBlockDOM2RichHTMLMergedTablePreservesBackslashContent",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_merged_table_html_backslash"
+      ]
+    },
+    {
+      "source": "test/protyle_mindmap_code_test.go",
+      "test": "TestProtyleMindmapIsOrdinaryCode",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "src/blockdom.rs::go_mindmap_ordinary_code"
+      ],
+      "gaps": [
+        {
+          "source": "test/protyle_mindmap_code_test.go",
+          "test": "TestProtyleMindmapIsOrdinaryCode",
+          "status": "partial",
+          "branch": "",
+          "reason": "Missing render.NewProtyleExportDocxRenderer; assertions: output excludes data-subtype=\"mindmap\"; output contains class=\"code-block"
+        },
+        {
+          "source": "test/protyle_mindmap_code_test.go",
+          "test": "TestProtyleMindmapIsOrdinaryCode",
+          "status": "partial",
+          "branch": "",
+          "reason": "Missing render.NewProtyleExportRenderer; assertions: output excludes data-subtype=\"mindmap\"; output contains class=\"code-block"
+        }
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestProtyleInlinePlaceholderCodepoints",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_placeholder_codepoints"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestProtyleInlinePlaceholderRendering",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_placeholder_rendering"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestBlockDOMInlinePlaceholderCompatibility",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_placeholder_text_mark_content",
+        "tests/go_editor_structural.rs::go_placeholder_compatibility"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestBlockDOMInlinePlaceholderNormalizationIsScoped",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_placeholder_scoped"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestBlockDOMInlinePlaceholderPreservesAttributeWordJoiners",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_placeholder_attribute_joiners"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestSpinBlockDOMInlinePlaceholderCanonicalAndIdempotent",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_placeholder_canonical"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestBlockDOMInlinePlaceholderDoesNotLeakToExports",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_placeholder_no_export_leak"
+      ]
+    },
+    {
+      "source": "test/protyle_placeholder_test.go",
+      "test": "TestBlockDOMInlinePlaceholderPreservesRealWordJoiners",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_placeholder_real_joiners"
+      ]
+    },
+    {
+      "source": "test/protyle_table_spans_test.go",
+      "test": "TestBlockDOMTableSpans",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_blockdom_table_spans"
+      ]
+    },
+    {
+      "source": "test/protyle_table_spans_test.go",
+      "test": "TestBlockDOMTableSpansPreserveRichSource",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table.rs::go_table_spans_preserve_rich_source"
+      ]
+    },
+    {
+      "source": "test/recursive_list_conversion_test.go",
+      "test": "TestConvertListType",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_convert_list_type"
+      ]
+    },
+    {
+      "source": "test/recursive_list_conversion_test.go",
+      "test": "TestConvertListTypePairs",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_convert_list_pairs"
+      ]
+    },
+    {
+      "source": "test/recursive_list_conversion_test.go",
+      "test": "TestConvertTaskListType",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_convert_task_list"
+      ]
+    },
+    {
+      "source": "test/recursive_list_conversion_test.go",
+      "test": "TestCancelListRecursively",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_cancel_list_recursive"
+      ]
+    },
+    {
+      "source": "test/recursive_list_conversion_test.go",
+      "test": "TestCancelListKeepsExistingMultipleRootOrder",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/blockdom.rs::go_cancel_list_root_order"
+      ]
+    },
+    {
+      "source": "test/render_list_style_test.go",
+      "test": "TestRenderListStyle",
+      "tables": [
+        "renderListStyleTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/render_list_style_test.go",
+      "test": "TestRenderListStyleVditor",
+      "tables": [
+        "renderListStyleVditorTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/render_list_style_test.go",
+      "test": "TestRenderListStyleVditorIR",
+      "tables": [
+        "renderListStyleVditorIRTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/sanitizer_test.go",
+      "test": "TestSanitizer",
+      "tables": [
+        "sanitizerTests"
+      ],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/sanitizer_test.go",
+      "test": "TestSanitizerVditor",
+      "tables": [
+        "sanitizerVditorTests"
+      ],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/sanitizer_test.go",
+      "test": "TestSanitize",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/setext_test.go",
+      "test": "TestSetext",
+      "tables": [
+        "setextTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/setext_test.go",
+      "test": "TestDisableSetext",
+      "tables": [
+        "setextDisableTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/space_test.go",
+      "test": "TestAutoSpace",
+      "tables": [
+        "spaceTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/span_ial_entity_test.go",
+      "test": "TestSpanIALEntityBoundaries",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_span_i_a_l_entity_boundaries"
+      ]
+    },
+    {
+      "source": "test/spin_block_test.go",
+      "test": "TestSpinBlockDOM",
+      "tables": [
+        "spinBlockDOMTests"
+      ],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_original_tables.rs::go_spin_blockdom_case_288_is_idempotent"
+      ]
+    },
+    {
+      "source": "test/spin_block_test.go",
+      "test": "TestSpinBlockDOMStrikethrough1Disabled",
+      "tables": [
+        "spinBlockDOMStrikethrough1DisabledTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/spin_ir_test.go",
+      "test": "TestSpinVditorIRDOM",
+      "tables": [
+        "spinVditorIRDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/spin_sv_test.go",
+      "test": "TestSpinVditorSVDOM",
+      "tables": [
+        "spinVditorSVDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/spin_wysiwyg_test.go",
+      "test": "TestSpinVditorDOM",
+      "tables": [
+        "spinVditorDOMTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/spin_wysiwyg_test.go",
+      "test": "TestSpinVditorDOMTableInList",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_spin_vditor_dom_table_in_list"
+      ]
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestStrikethrough",
+      "tables": [
+        "strikethroughTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestStrikethroughDisabled",
+      "tables": [
+        "strikethroughDisabledTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestFullWidthStrikethrough",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_fullwidth_strikethrough"
+      ]
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestFullWidthStrikethroughDisabled",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_fullwidth_strikethrough_disabled"
+      ]
+    },
+    {
+      "source": "test/strikethrough_test.go",
+      "test": "TestSpinBlockDOMFullWidthStrikethrough",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_spin_fullwidth_strikethrough"
+      ]
+    },
+    {
+      "source": "test/super_block_test.go",
+      "test": "TestSuperBlock",
+      "tables": [
+        "superBlockTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/supsub_test.go",
+      "test": "TestSupSub",
+      "tables": [
+        "supsubTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/table_alignment_style_test.go",
+      "test": "TestTableCellAlignmentUsesInlineStyle",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_table_cell_alignment_uses_inline_style"
+      ],
+      "gaps": [
+        {
+          "source": "test/table_alignment_style_test.go",
+          "test": "TestTableCellAlignmentUsesInlineStyle",
+          "status": "partial",
+          "branch": "Word output inline alignment",
+          "reason": "Rust has no render.NewProtyleExportDocxRenderer equivalent; Markdown/block DOM and BlockDOM2RichHTML assertions are migrated."
+        }
+      ]
+    },
+    {
+      "source": "test/table_alignment_style_test.go",
+      "test": "TestStandardMarkdownTableOmitsCellAttributes",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_standard_markdown_table_omits_cell_attributes"
+      ]
+    },
+    {
+      "source": "test/table_alignment_style_test.go",
+      "test": "TestTableCellInlineStyleOverridesLegacyAlign",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "src/parse/table.rs::go_inline_style_overrides_legacy_alignment"
+      ],
+      "gaps": [
+        {
+          "source": "test/table_alignment_style_test.go",
+          "test": "TestTableCellInlineStyleOverridesLegacyAlign",
+          "status": "partial",
+          "branch": "Docx output and post-render style immutability",
+          "reason": "Rust has no render.NewProtyleExportDocxRenderer equivalent; inline alignment precedence and Markdown round-trip assertions are migrated. Cannot reproduce post-Docx source style immutability assertion without original renderer."
+        }
+      ]
+    },
+    {
+      "source": "test/table_alignment_style_test.go",
+      "test": "TestHTMLTableCellAlignmentDifferencesSurviveMarkdown",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_html_table_cell_alignment_differences_survive_markdown"
+      ]
+    },
+    {
+      "source": "test/table_alignment_style_test.go",
+      "test": "TestLegacyTableCellAlignmentSurvivesMarkdownExport",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table.rs::go_legacy_table_cell_alignment_survives_markdown_export"
+      ]
+    },
+    {
+      "source": "test/table_body_test.go",
+      "test": "TestTableRenderersOmitEmptyBody",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_table_body_blockdom_and_preview"
+      ],
+      "gaps": [
+        {
+          "source": "test/table_body_test.go",
+          "test": "TestTableRenderersOmitEmptyBody",
+          "status": "partial",
+          "branch": "export renderer output",
+          "reason": "Rust has no render.NewProtyleExportRenderer equivalent; block DOM and ProtylePreview assertions are migrated without substituting HtmlRenderer for the missing export renderer."
+        }
+      ]
+    },
+    {
+      "source": "test/table_body_test.go",
+      "test": "TestTableRenderersKeepNonemptyBody",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_table_body_blockdom_and_preview"
+      ],
+      "gaps": [
+        {
+          "source": "test/table_body_test.go",
+          "test": "TestTableRenderersKeepNonemptyBody",
+          "status": "partial",
+          "branch": "export renderer output",
+          "reason": "Rust has no render.NewProtyleExportRenderer equivalent; block DOM and ProtylePreview assertions are migrated without substituting HtmlRenderer for the missing export renderer."
+        }
+      ]
+    },
+    {
+      "source": "test/table_rich_test.go",
+      "test": "TestTableRichRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_table_rich_round_trip"
+      ]
+    },
+    {
+      "source": "test/table_rich_test.go",
+      "test": "TestTableRichClipboardAndMergedExport",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_table_rich_clipboard_and_merged_export"
+      ]
+    },
+    {
+      "source": "test/table_rich_test.go",
+      "test": "TestTableRichPreservesInvalidEmptyMetadata",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_table_rich_preserves_invalid_empty_metadata"
+      ]
+    },
+    {
+      "source": "test/table_rich_test.go",
+      "test": "TestTableRichCodeProjectionEscapesMarkup",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_table_rich_code_projection_escapes_markup"
+      ]
+    },
+    {
+      "source": "test/table_rich_test.go",
+      "test": "TestTableRichDoesNotReinterpretLegacyCells",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_table_rich_does_not_reinterpret_legacy_cells",
+        "tests/go_table_structural.rs::go_table_rich_does_not_reinterpret_legacy_cells"
+      ]
+    },
+    {
+      "source": "test/table_rich_test.go",
+      "test": "TestTableRichRejectsUnsupportedPayloads",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": [
+        "src/parse/table_rich.rs::go_table_rich_rejects_unsupported_payloads"
+      ],
+      "gaps": [
+        {
+          "source": "test/table_rich_test.go",
+          "test": "TestTableRichRejectsUnsupportedPayloads",
+          "reason": "Rust TableCellRich.content is a String, so the original invalid UTF-8 case cannot be constructed; every other rejection case is ported and passes.",
+          "assertions": [
+            "invalid UTF-8 source is rejected by Validate"
+          ],
+          "status": "partial",
+          "branch": "invalid UTF-8 payload"
+        }
+      ]
+    },
+    {
+      "source": "test/table_whitespace_test.go",
+      "test": "TestVditorTableInlineWhitespaceRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_vditor_table_inline_whitespace_round_trip"
+      ]
+    },
+    {
+      "source": "test/table_whitespace_test.go",
+      "test": "TestHTML2MdTableInlineWhitespace",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_table_structural.rs::go_html2md_table_inline_whitespace"
+      ]
+    },
+    {
+      "source": "test/tabs_export_test.go",
+      "test": "TestTabsExportNestedTitleBlocks",
+      "tables": [],
+      "status": "unavailable_implementation",
+      "reason": "ProtyleExportRenderer is not implemented in Rust",
+      "gaps": [
+        {
+          "source": "test/tabs_export_test.go",
+          "test": "TestTabsExportNestedTitleBlocks",
+          "status": "unavailable",
+          "branch": "entire function",
+          "reason": "Missing ProtyleExportRenderer"
+        }
+      ]
+    },
+    {
+      "source": "test/tabs_export_test.go",
+      "test": "TestTabsStandardExportLiteralFences",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_export_test.go",
+      "test": "TestTabsLiteralMarkerCaretSpin",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_task_test.go",
+      "test": "TestTabsTaskRoundTrip",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_task_test.go",
+      "test": "TestCustomTaskStatusSpinRoundTrip",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "src/parse/tabs.rs::go_tabs_round_trip_retains_original_title_metadata"
+      ]
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsContainersAndFences",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabItemFragmentAndExport",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsHTMLAndEmptyInput",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsEmptyParagraphIDs",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsSlashPreset",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsNestedFenceLengthsAndIndent",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsCanonicalFenceLengths",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsDeepNesting",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsLiteralMarkers",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsLiteralMarkersSpin",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsNestedSlashPreset",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsEmptyAndLeadingBody",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsActiveSelection",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsNestedActiveSelection",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_test.go",
+      "test": "TestTabsItemAttributePlacement",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_title_block_test.go",
+      "test": "TestTabsOriginalTitleBlock",
+      "tables": [],
+      "status": "partially_ported_assertions",
+      "rust": "tests/go_tabs_tests.rs",
+      "reason": "PDF and standalone ProtyleExportRenderer assertions unavailable",
+      "gaps": [
+        {
+          "source": "test/tabs_title_block_test.go",
+          "test": "TestTabsOriginalTitleBlock",
+          "status": "partial",
+          "branch": "PDF/standalone assertions",
+          "reason": "Missing ProtyleExportRenderer"
+        }
+      ]
+    },
+    {
+      "source": "test/tabs_title_block_test.go",
+      "test": "TestTabsClipboardNestingAndLiteralIAL",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_title_block_test.go",
+      "test": "TestTabsEmptyAndMultilineTitleIdentity",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tabs_whitespace_test.go",
+      "test": "TestTabsTitleWhitespace",
+      "tables": [],
+      "status": "ported_tabs_assertions",
+      "rust": "tests/go_tabs_tests.rs"
+    },
+    {
+      "source": "test/tag_protyle_punctuation_test.go",
+      "test": "TestProtyleTagPunctuationBoundary",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_tag_punctuation"
+      ]
+    },
+    {
+      "source": "test/tag_protyle_punctuation_test.go",
+      "test": "TestProtyleTagPunctuationBoundaryKeepsValidSyntax",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_tag_valid_syntax"
+      ]
+    },
+    {
+      "source": "test/tag_test.go",
+      "test": "TestTag",
+      "tables": [
+        "tagTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/tag_test.go",
+      "test": "TestTagDisable",
+      "tables": [
+        "tagDisableTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/term_typo_test.go",
+      "test": "TestTermTypo",
+      "tables": [
+        "termTypoTests"
+      ],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/term_typo_test.go",
+      "test": "TestTermTypoFormat",
+      "tables": [
+        "termTypoFormatTests"
+      ],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "test/text_mark_delimiters_test.go",
+      "test": "TestSpinCrossTextMarkDelimiters",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_cross_text_mark_delimiters"
+      ]
+    },
+    {
+      "source": "test/text_mark_escape_roundtrip_test.go",
+      "test": "TestTextMarkEscapedKramdownRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_editor_structural.rs::go_text_mark_escape_roundtrip"
+      ]
+    },
+    {
+      "source": "test/textbundle_test.go",
+      "test": "TestTextBundle",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_api_structural.rs::test_text_bundle"
+      ]
+    },
+    {
+      "source": "test/toc_test.go",
+      "test": "TestToC",
+      "tables": [
+        "tocTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/v2m_test.go",
+      "test": "TestVditorDOM2Md",
+      "tables": [
+        "vditorDOM2MdTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/v2m_test.go",
+      "test": "TestVditorIRDOM2Md",
+      "tables": [
+        "vditorIRDOM2MdTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "test/vditor_callout_test.go",
+      "test": "TestVditorCalloutRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_vditor_callout_round_trip"
+      ]
+    },
+    {
+      "source": "test/vditor_callout_test.go",
+      "test": "TestCalloutTypeAttributeEscaping",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_callout_type_attribute_escaping"
+      ]
+    },
+    {
+      "source": "test/vditor_table_br_test.go",
+      "test": "TestVditorTableCellBrRoundTrip",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_vditor_table_cell_br_round_trip"
+      ]
+    },
+    {
+      "source": "test/vditor_table_br_test.go",
+      "test": "TestSpinVditorTableCellBr",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_vditor_structural.rs::go_test_spin_vditor_table_cell_br"
+      ]
+    },
+    {
+      "source": "test/wps_text_style_test.go",
+      "test": "TestWPSTextStyle",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "rust": [
+        "tests/go_style_structural.rs::go_wps_text_style"
+      ]
+    },
+    {
+      "source": "test/yaml_front_matter_test.go",
+      "test": "TestYamlFrontMatter",
+      "tables": [
+        "yamlFrontMatterTests"
+      ],
+      "status": "ported_table_assertions_verified",
+      "rust": "tests/go_original_tables.rs",
+      "assertion_review": "go-table-assertion-review.json"
+    },
+    {
+      "source": "parse/file_annotation_ref_test.go",
+      "test": "TestFileAnnotationRefRejectsNestedOpenersWithoutConsumingInput",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "src/parse/inline/misc.rs"
+    },
+    {
+      "source": "parse/html_text_style_test.go",
+      "test": "TestResolveHTMLTextStyle",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "reason": "HTMLTextStyle / ResolveHTMLTextStyle / HTMLStyleDeclarations have no Rust equivalents",
+      "rust": [
+        "src/parse/html_text_style.rs::go_resolve_html_text_style"
+      ]
+    },
+    {
+      "source": "parse/html_text_style_test.go",
+      "test": "TestHTMLStyleDeclarations",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "reason": "HTMLTextStyle / ResolveHTMLTextStyle / HTMLStyleDeclarations have no Rust equivalents",
+      "rust": [
+        "src/parse/html_text_style.rs::go_html_style_declarations"
+      ]
+    },
+    {
+      "source": "parse/html_text_style_test.go",
+      "test": "TestHTMLBackgroundShorthand",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "reason": "HTMLTextStyle / ResolveHTMLTextStyle / HTMLStyleDeclarations have no Rust equivalents",
+      "rust": [
+        "src/parse/html_text_style.rs::go_background_shorthand"
+      ]
+    },
+    {
+      "source": "parse/html_text_style_test.go",
+      "test": "TestHTMLTextThemeColors",
+      "tables": [],
+      "status": "ported_structural_assertions",
+      "reason": "HTMLTextStyle / ResolveHTMLTextStyle / HTMLStyleDeclarations have no Rust equivalents",
+      "rust": [
+        "src/parse/html_text_style.rs::go_theme_colors"
+      ]
+    },
+    {
+      "source": "parse/inline_attribute_list_test.go",
+      "test": "TestMergeIALPreservingOrder",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "src/parse/ial.rs"
+    },
+    {
+      "source": "parse/performance_regression_test.go",
+      "test": "TestTableCandidateCompatibility",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "tests/go_parse_tests.rs + src/parse/table.rs"
+    },
+    {
+      "source": "parse/performance_regression_test.go",
+      "test": "TestAutoLinkCandidateCompatibility",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "tests/go_parse_tests.rs"
+    },
+    {
+      "source": "parse/performance_regression_test.go",
+      "test": "TestTaskListProbeCompatibility",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "tests/go_parse_tests.rs"
+    },
+    {
+      "source": "parse/performance_regression_test.go",
+      "test": "TestReferenceIndexCompatibility",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "src/parse/inline/index.rs"
+    },
+    {
+      "source": "parse/performance_regression_test.go",
+      "test": "TestLinkLabelBoundaries",
+      "tables": [],
+      "status": "ported_function_assertions",
+      "rust": "src/parse/link.rs"
+    },
+    {
+      "source": "lex/lexer_test.go",
+      "test": "TestLexerNormalizeLines",
+      "tables": [],
+      "status": "ported_helper_assertions",
+      "rust": "tests/go_helpers_tests.rs"
+    },
+    {
+      "source": "util/byte_str_test.go",
+      "test": "TestStrToBytes",
+      "tables": [],
+      "status": "go_runtime_specific",
+      "reason": "Go unsafe byte/string aliasing and GC behavior; Rust ownership tests cover Rust lifetime guarantees, not this Go API"
+    },
+    {
+      "source": "util/byte_str_test.go",
+      "test": "TestStrToBytesLifetime",
+      "tables": [],
+      "status": "go_runtime_specific",
+      "reason": "Go unsafe byte/string aliasing and GC behavior; Rust ownership tests cover Rust lifetime guarantees, not this Go API"
+    },
+    {
+      "source": "conformance/conformance_test.go",
+      "test": "TestGolden",
+      "tables": [],
+      "status": "go_harness_specific",
+      "reason": "Original Go harness tests continue under go test ./..."
+    },
+    {
+      "source": "conformance/conformance_test.go",
+      "test": "TestCasesWellFormed",
+      "tables": [],
+      "status": "go_harness_specific",
+      "reason": "Original Go harness tests continue under go test ./..."
+    },
+    {
+      "source": "conformance/conformance_test.go",
+      "test": "TestOptionCasesHaveEffect",
+      "tables": [],
+      "status": "go_harness_specific",
+      "reason": "Original Go harness tests continue under go test ./..."
+    }
+  ]
+}

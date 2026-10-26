@@ -1,0 +1,306 @@
+[
+  {
+    "go_file": "test/html_entity_test.go",
+    "go_test": "TestHTMLEntity",
+    "name": "0",
+    "api": "markdown",
+    "source": "&amp;foo&",
+    "expected": "<p>&amp;foo&amp;</p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "18",
+    "api": "sanitize_markdown",
+    "source": "<div><svg><a xlink:href=\"javascript:alert('xss')\"><rect/></a></svg></div>",
+    "expected": "<div><svg><a><rect/></a></svg></div>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "17",
+    "api": "sanitize_markdown",
+    "source": "<div><form action=\"javascript:alert('xss')\"><button>click me</button></form></div>",
+    "expected": "<div><form><button>click me</button></form></div>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "16",
+    "api": "sanitize_markdown",
+    "source": "<form><input formaction=javascript:alert('xss') type=submit value='click me'></input></form>",
+    "expected": "<form><input type=\"submit\" value=\"click me\"></input></form>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "15",
+    "api": "sanitize_markdown",
+    "source": "<meta http-equiv=\"refresh\" content=\"0\" />",
+    "expected": "<meta content=\"0\"/>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "14",
+    "api": "sanitize_markdown",
+    "source": "<div><p /><a href=\"javascript:alert('xss')\">click me</a></div>",
+    "expected": "<div><p/><a>click me</a></div>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "13",
+    "api": "sanitize_markdown",
+    "source": "<iframe src=\"data&NewLine;:text/html,%3Cscript%3Ealert('xss')%3C%2Fscript%3E\"></iframe>",
+    "expected": "<iframe></iframe>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "12",
+    "api": "sanitize_markdown",
+    "source": "<iframe src=\"data&Tab;:text/html,%3Cscript%3Ealert('xss')%3C%2Fscript%3E\"></iframe>",
+    "expected": "<iframe></iframe>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "11",
+    "api": "sanitize_markdown",
+    "source": "<iframe src=\"java&NewLine;script:alert('xss')\"></iframe>",
+    "expected": "<iframe></iframe>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "10",
+    "api": "sanitize_markdown",
+    "source": "<iframe src=\"java&Tab;script:alert('xss')\"></iframe>",
+    "expected": "<iframe></iframe>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "9",
+    "api": "sanitize_markdown",
+    "source": "<iframe srcdoc=\"&lt;img src&equals;x onerror&equals;alert&lpar;'xss'&rpar;&gt;\" />",
+    "expected": "<iframe/>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "8",
+    "api": "sanitize_markdown",
+    "source": "[xss](javascript:alert(document.domain))",
+    "expected": "<p><a href=\"\">xss</a></p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "7",
+    "api": "sanitize_markdown",
+    "source": "![a](\"<img src=xss onerror=alert(1)>)\n",
+    "expected": "<p>![a](&quot;&lt;img src=xss onerror=alert(1)&gt;)</p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "6",
+    "api": "sanitize_markdown",
+    "source": "<img src=\"foo\" onload=\"alert(1)\" onerror=\"alert(2)\"/>",
+    "expected": "<img src=\"foo\" />\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "5",
+    "api": "sanitize_markdown",
+    "source": "<iframe src='javascript:parent.require(\"child_process\").exec(\"open -a Calculator\")'></iframe>",
+    "expected": "<iframe></iframe>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "4",
+    "api": "sanitize_markdown",
+    "source": "![Escape SRC - onerror](\"onerror=\"alert('ImageOnError'))",
+    "expected": "<p><img src=\"%22onerror=%22alert(&#39;ImageOnError&#39;)\" alt=\"Escape SRC - onerror\" /></p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "3",
+    "api": "sanitize_markdown",
+    "source": "<EMBED SRC=\"data:image/svg+xml;base64,mock payload\" type=\"image/svg+xml\" AllowScriptAccess=\"always\"></EMBED>",
+    "expected": "<p><embed type=\"image/svg+xml\" allowscriptaccess=\"always\"></embed></p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "2",
+    "api": "sanitize_markdown",
+    "source": "<FOo>bar",
+    "expected": "<p><foo>bar</p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "1",
+    "api": "sanitize_markdown",
+    "source": "<img onerror=\"alert(1)\" src=\"bar.png\" />",
+    "expected": "<img src=\"bar.png\" />\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizer",
+    "name": "0",
+    "api": "sanitize_markdown",
+    "source": "foo<script>alert(1)</script>bar",
+    "expected": "<p>foo alert(1) bar</p>\n"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "8",
+    "api": "sanitize_vditor",
+    "source": "<img OnError=\"alert(1)\" src=\"bar.png\" />",
+    "expected": "<p data-block=\"0\"><img src=\"bar.png\" alt=\"\" /></p>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "7",
+    "api": "sanitize_vditor",
+    "source": "<iframe src=\"//player.bilibili.com/player.html?aid=test&page=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"> </iframe>",
+    "expected": "<div class=\"vditor-wysiwyg__block\" data-type=\"html-block\" data-block=\"0\"><pre><code>&lt;iframe src=&quot;https://player.bilibili.com/player.html?aid=test&amp;page=1&quot; scrolling=&quot;no&quot; border=&quot;0&quot; frameborder=&quot;no&quot; framespacing=&quot;0&quot; allowfullscreen=&quot;true&quot;&gt;&lt;/iframe&gt;</code></pre><pre class=\"vditor-wysiwyg__preview\" data-render=\"2\"><iframe src=\"https://player.bilibili.com/player.html?aid=test&amp;page=1\" scrolling=\"no\" border=\"0\" frameborder=\"no\" framespacing=\"0\" allowfullscreen=\"true\"></iframe></pre></div>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "6",
+    "api": "sanitize_vditor",
+    "source": "<div class=\"vditor-wysiwyg__block\" data-type=\"html-block\" data-block=\"0\"><pre><code>&lt;img src=\"test1<wbr>\" onerror=\"alert('XSS')\"&gt;</code></pre><pre class=\"vditor-wysiwyg__preview\" data-render=\"1\"><img src=\"test\" onerror=\"alert('XSS')\"></pre></div>",
+    "expected": "<div class=\"vditor-wysiwyg__block\" data-type=\"html-block\" data-block=\"0\"><pre><code>&lt;img src=&quot;test1<wbr>&quot; onerror=&quot;alert('XSS')&quot;&gt;</code></pre><pre class=\"vditor-wysiwyg__preview\" data-render=\"2\"><img src=\"test1\"></pre></div>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "5",
+    "api": "sanitize_vditor",
+    "source": "<iframe src=\"javascript:parent.require('child_process').exec('open -a Calculator')\"></iframe>",
+    "expected": "<div class=\"vditor-wysiwyg__block\" data-type=\"html-block\" data-block=\"0\"><pre><code>&lt;iframe src=&quot;javascript:parent.require('child_process').exec('open -a Calculator')&quot;&gt;&lt;/iframe&gt;</code></pre><pre class=\"vditor-wysiwyg__preview\" data-render=\"2\"><iframe></iframe></pre></div>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "4",
+    "api": "sanitize_vditor",
+    "source": "![Escape SRC - onerror](\"onerror=\"alert('ImageOnError'))",
+    "expected": "<p data-block=\"0\"><img src=\"\" alt=\"Escape SRC - onerror\" /></p>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "3",
+    "api": "sanitize_vditor",
+    "source": "<EMBED SRC=\"data:image/svg+xml;base64,mock payload\" type=\"image/svg+xml\" AllowScriptAccess=\"always\"></EMBED>",
+    "expected": "<p data-block=\"0\">​<code data-type=\"html-inline\">​&lt;embed src=&quot;data:image/svg+xml;base64,mock payload&quot; type=&quot;image/svg+xml&quot; allowscriptaccess=&quot;always&quot;/&gt;</code></p>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "2",
+    "api": "sanitize_vditor",
+    "source": "<FOo>bar",
+    "expected": "<p data-block=\"0\">foobar</p>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "1",
+    "api": "sanitize_vditor",
+    "source": "<img onerror=\"alert(1)\" src=\"bar.png\" />",
+    "expected": "<p data-block=\"0\"><img src=\"bar.png\" alt=\"\" /></p>"
+  },
+  {
+    "go_file": "test/sanitizer_test.go",
+    "go_test": "TestSanitizerVditor",
+    "name": "0",
+    "api": "sanitize_vditor",
+    "source": "foo<script>alert(1)</script>bar",
+    "expected": "<p data-block=\"0\">foo</p><div class=\"vditor-wysiwyg__block\" data-type=\"html-block\" data-block=\"0\"><pre><code>&lt;script&gt;alert(1)&lt;/script&gt;</code></pre><pre class=\"vditor-wysiwyg__preview\" data-render=\"2\">  </pre></div><p data-block=\"0\">bar</p>"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "7",
+    "api": "term_markdown",
+    "source": "customtest\n",
+    "expected": "<p>CUSTOMtest</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "6",
+    "api": "term_markdown",
+    "source": "gorm orm\n",
+    "expected": "<p>GORM ORM</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "5",
+    "api": "term_markdown",
+    "source": "test.html\n",
+    "expected": "<p>test.html</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "4",
+    "api": "term_markdown",
+    "source": "cookie ie ieo\n",
+    "expected": "<p>cookie IE ieo</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "3",
+    "api": "term_markdown",
+    "source": "github.com\n",
+    "expected": "<p>github.com</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "2",
+    "api": "term_markdown",
+    "source": "https://github.com\n",
+    "expected": "<p><a href=\"https://github.com\">https://github.com</a></p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "1",
+    "api": "term_markdown",
+    "source": "特别是简历中千万不要出现这样的情况：熟练使用JAVA、Javascript、GIT，对android、ios开发有一定了解，熟练使用Mysql、postgresql数据库。\n",
+    "expected": "<p>特别是简历中千万不要出现这样的情况：熟练使用 Java、JavaScript、Git，对 Android、iOS 开发有一定了解，熟练使用 MySQL、PostgreSQL 数据库。</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypo",
+    "name": "0",
+    "api": "term_markdown",
+    "source": "在github上做开源项目是一件很开心的事情，请不要把Github拼写成`github`哦！\n",
+    "expected": "<p>在 GitHub 上做开源项目是一件很开心的事情，请不要把 GitHub 拼写成 <code>github</code> 哦！</p>\n"
+  },
+  {
+    "go_file": "test/term_typo_test.go",
+    "go_test": "TestTermTypoFormat",
+    "name": "0",
+    "api": "term_format",
+    "source": "这是一个 github 测试",
+    "expected": "这是一个 GitHub 测试\n"
+  }
+]

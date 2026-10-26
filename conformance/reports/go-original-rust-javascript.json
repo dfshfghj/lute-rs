@@ -1,0 +1,155 @@
+{
+  "description": "Observed failures, not an allowlist. The strict Rust test still fails on every mismatch and unavailable driver.",
+  "command": "LUTE_GO_TEST_REPORT=/tmp/go-original.json cargo test --manifest-path rust/Cargo.toml -p lute-core --test go_original_tables --features javascript",
+  "fixture_sha256": "81caafe9ba6370ed6d6204686db84aa2d509f970ec3c051ade107bc46e0ba9bc",
+  "rust_core_sources_sha256": "3564b4ca1acfcc5ea2022db2673a5226d5e9cf8d4cf21b9f7cf99820fc0a3432",
+  "build_profile": "javascript",
+  "omitted_capabilities": [
+    "chroma"
+  ],
+  "reference_differences": [
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre><code class=\"language-go highlight-chroma\"><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kn\">package</span><span class=\"highlight-w\"> </span><span class=\"highlight-nx\">main</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kn\">import</span><span class=\"highlight-w\"> </span><span class=\"highlight-s\">&#34;fmt&#34;</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kd\">func</span><span class=\"highlight-w\"> </span><span class=\"highlight-nf\">main</span><span class=\"highlight-p\">()</span><span class=\"highlight-w\"> </span><span class=\"highlight-p\">{</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-w\">\t</span><span class=\"highlight-nx\">fmt</span><span class=\"highlight-p\">.</span><span class=\"highlight-nf\">Println</span><span class=\"highlight-p\">(</span><span class=\"highlight-s\">&#34;Hello, World!&#34;</span><span class=\"highlight-p\">)</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-p\">}</span><span class=\"highlight-w\">\n</span></span></span></code></pre>\n",
+      "profile_expected": "<pre><code class=\"language-go\">package main\nimport &quot;fmt&quot;\nfunc main() {\nfmt.Println(&quot;Hello, World!&quot;)\n}\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_go_test.go",
+      "table": "codeSyntaxHighlightGoTests",
+      "test": "TestCodeSyntaxHighlightGo"
+    },
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre><code class=\"language-go highlight-chroma\"><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kn\">package</span><span class=\"highlight-w\"> </span><span class=\"highlight-nx\">lute</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kd\">func</span><span class=\"highlight-w\"> </span><span class=\"highlight-nf\">test</span><span class=\"highlight-p\">()</span><span class=\"highlight-w\"> </span><span class=\"highlight-p\">{</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-w\">\t</span><span class=\"highlight-k\">return</span><span class=\"highlight-w\">\n</span></span></span><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-p\">}</span><span class=\"highlight-w\">\n</span></span></span></code></pre>\n",
+      "profile_expected": "<pre><code>package lute\n\nfunc test() {\n\treturn\n}\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_test.go",
+      "table": "issue22Tests",
+      "test": "TestCodeSyntaxHighlightDetectLang"
+    },
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre><code class=\"language-mysql\">mysql&gt; SELECT * FROM `test_table`;\n</code></pre>\n",
+      "profile_expected": "<pre><code>mysql&gt; SELECT * FROM `test_table`;\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_test.go",
+      "table": "codeSyntaxHighlightDetectLang1Tests",
+      "test": "TestCodeSyntaxHighlightDetectLang1"
+    },
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre><code class=\"language-java highlight-chroma\"><span class=\"highlight-line\"><span class=\"highlight-ln\">1</span><span class=\"highlight-cl\"><span class=\"highlight-kt\">int</span><span class=\"highlight-w\"> </span><span class=\"highlight-n\">i</span><span class=\"highlight-p\">;</span><span class=\"highlight-w\">\n</span></span></span></code></pre>\n",
+      "profile_expected": "<pre><code class=\"language-java\">int i;\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_test.go",
+      "table": "codeSyntaxHighlightLineNumTests",
+      "test": "TestCodeSyntaxHighlightLineNum"
+    },
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre><code class=\"language-java highlight-chroma\"><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kt\">int</span><span class=\"highlight-w\"> </span><span class=\"highlight-n\">i</span><span class=\"highlight-p\">;</span><span class=\"highlight-w\">\n</span></span></span></code></pre>\n",
+      "profile_expected": "<pre><code class=\"language-java\">int i;\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_test.go",
+      "table": "codeSyntaxHighlightTests",
+      "test": "TestCodeSyntaxHighlight"
+    },
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre style=\"color: #f8f8f2; background-color: #282a36\"><code class=\"language-java\"><span style=\"display:flex;\"><span><span style=\"color:#8be9fd\">int</span> i;\n</span></span></code></pre>\n",
+      "profile_expected": "<pre><code class=\"language-java\">int i;\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_test.go",
+      "table": "codeSyntaxHighlightInlineTests",
+      "test": "TestCodeSyntaxHighlightInline"
+    },
+    {
+      "case": "0",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre><code class=\"language-java highlight-chroma\"><span class=\"highlight-line\"><span class=\"highlight-cl\"><span class=\"highlight-kt\">int</span><span class=\"highlight-w\"> </span><span class=\"highlight-n\">i</span><span class=\"highlight-p\">;</span><span class=\"highlight-w\">\n</span></span></span></code></pre>\n",
+      "profile_expected": "<pre><code class=\"language-java\">int i;\n</code></pre>\n",
+      "source": "test/code_syntax_highlight_test.go",
+      "table": "codeSyntaxHighlightStyleTests",
+      "test": "TestCodeSyntaxHighlightStyle"
+    },
+    {
+      "case": "56",
+      "case_index": 21,
+      "driver_index": 0,
+      "original_expected": "<p><a href=\"/url\">SS</a></p>\n",
+      "profile_expected": "<p>[SS]</p>\n",
+      "source": "test/debug_test.go",
+      "table": "debugTests",
+      "test": "TestDebug"
+    },
+    {
+      "case": "55",
+      "case_index": 22,
+      "driver_index": 0,
+      "original_expected": "<p><a href=\"/url\">ẞ</a></p>\n",
+      "profile_expected": "<p>[ẞ]</p>\n",
+      "source": "test/debug_test.go",
+      "table": "debugTests",
+      "test": "TestDebug"
+    },
+    {
+      "case": "54",
+      "case_index": 23,
+      "driver_index": 0,
+      "original_expected": "<ul>\n<li>\n<p>foo</p>\n<pre><code class=\"highlight-chroma\"></code></pre>\n</li>\n</ul>\n<p>bar</p>\n<pre><code class=\"highlight-chroma\"></code></pre>\n",
+      "profile_expected": "<ul>\n<li>\n<p>foo</p>\n<pre><code></code></pre>\n</li>\n</ul>\n<p>bar</p>\n<pre><code></code></pre>\n",
+      "source": "test/debug_test.go",
+      "table": "debugTests",
+      "test": "TestDebug"
+    },
+    {
+      "case": "4",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<pre data-block-id=\"20201105103725-3ad5wcz\"><code class=\"highlight-chroma\"><span class=\"highlight-line\"><span class=\"highlight-cl\">foo\n</span></span></code></pre>\n",
+      "profile_expected": "<pre><code>foo\n</code></pre>\n",
+      "source": "test/kramdown_block_ial_test.go",
+      "table": "kramdownBlockIALIDNAmeTests",
+      "test": "TestKramdownBlockIALIDName"
+    },
+    {
+      "case": "fold-ss",
+      "case_index": 0,
+      "driver_index": 0,
+      "original_expected": "<p><a href=\"/first\">ss</a></p>\n",
+      "profile_expected": "<p><a href=\"/second\">ss</a></p>\n",
+      "source": "test/parse_test.go",
+      "table": "parseTests",
+      "test": "TestParse"
+    },
+    {
+      "case": "fold-SS",
+      "case_index": 1,
+      "driver_index": 0,
+      "original_expected": "<p><a href=\"/first\">SS</a></p>\n",
+      "profile_expected": "<p><a href=\"/second\">SS</a></p>\n",
+      "source": "test/parse_test.go",
+      "table": "parseTests",
+      "test": "TestParse"
+    }
+  ],
+  "checked": 2075,
+  "failed": 0,
+  "passed": 2075,
+  "by_kind": {},
+  "by_api": {},
+  "unsupported_drivers": [],
+  "failures": [],
+  "build_profiles_sha256": "cf777c190a9e102ede0fab527c170d3bba8770dc779ffddce0e58d997d10c0db",
+  "additional_failed_tests": [],
+  "additional_failed_test_count": 0,
+  "workspace_passed_test_functions": 367,
+  "workspace_failed_test_functions": 0,
+  "workspace_ignored_test_functions": 0
+}

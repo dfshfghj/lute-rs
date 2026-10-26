@@ -1,0 +1,88 @@
+{
+  "group": "helpers",
+  "cases": [
+    {
+      "id": "helper-escape-html",
+      "api": "Lute.EscapeHTMLStr",
+      "args": [
+        "<a href=\"x\">&'</a>"
+      ]
+    },
+    {
+      "id": "helper-escape-html-empty",
+      "api": "Lute.EscapeHTMLStr",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "helper-unescape-html",
+      "api": "Lute.UnEscapeHTMLStr",
+      "args": [
+        "&lt;a&gt; &amp; &quot; &#39;"
+      ]
+    },
+    {
+      "id": "helper-unescape-plain",
+      "api": "Lute.UnEscapeHTMLStr",
+      "args": [
+        "plain"
+      ]
+    },
+    {
+      "id": "helper-sanitize-script",
+      "api": "Lute.Sanitize",
+      "args": [
+        "<script>alert(1)</script><p>ok</p>"
+      ]
+    },
+    {
+      "id": "helper-sanitize-img",
+      "api": "Lute.Sanitize",
+      "args": [
+        "<img src=x onerror=alert(1)>"
+      ]
+    },
+    {
+      "id": "helper-sanitize-plain",
+      "api": "Lute.Sanitize",
+      "args": [
+        "<p>a <b>b</b></p>"
+      ]
+    },
+    {
+      "id": "helper-echarts-mindmap",
+      "api": "Lute.EChartsMindmapStr",
+      "args": [
+        "- 根\n  - 子一\n  - 子二\n"
+      ]
+    },
+    {
+      "id": "helper-echarts-mindmap-empty",
+      "api": "Lute.EChartsMindmapStr",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "helper-blockdom2content",
+      "api": "Lute.BlockDOM2Content",
+      "args": [
+        "<div data-node-id=\"20210101120000-abcdefg\" data-node-index=\"1\" data-type=\"NodeParagraph\" class=\"p\"><div contenteditable=\"true\" spellcheck=\"false\">正文</div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+      ]
+    },
+    {
+      "id": "helper-blockdom2content-empty",
+      "api": "Lute.BlockDOM2Content",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "helper-constants",
+      "api": "Lute.Constants",
+      "args": [],
+      "note": "走查枚举与静态常量"
+    }
+  ]
+}

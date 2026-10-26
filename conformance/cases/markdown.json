@@ -1,0 +1,674 @@
+{
+  "group": "markdown",
+  "cases": [
+    {
+      "id": "md2html-basic",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# 标题\n\n**粗体** *斜体* `code` ~~删除~~\n"
+      ],
+      "note": "基础块级与行级语法"
+    },
+    {
+      "id": "md2html-empty",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ""
+      ],
+      "note": "空输入"
+    },
+    {
+      "id": "md2html-paragraphs",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "第一段\n\n第二段\n软换行\n"
+      ],
+      "note": "段落与软换行默认转硬换行"
+    },
+    {
+      "id": "md2html-table",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "| a | b |\n| --- | ---: |\n| 1 | 2 |\n"
+      ]
+    },
+    {
+      "id": "md2html-task",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "- [ ] 未完成\n- [x] 已完成\n"
+      ]
+    },
+    {
+      "id": "md2html-footnote",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "正文[^1]\n\n[^1]: 脚注内容\n"
+      ]
+    },
+    {
+      "id": "md2html-math",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "行内 $a^2+b^2=c^2$ 公式\n\n$$\nE = mc^2\n$$\n"
+      ]
+    },
+    {
+      "id": "md2html-code-fence",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "```go\nfunc main() {}\n```\n"
+      ],
+      "note": "JS 构建不实现语法高亮，与 Go 快照不同"
+    },
+    {
+      "id": "md2html-code-indent",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "    indented code\n"
+      ]
+    },
+    {
+      "id": "md2html-quote",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "> 引用\n>\n> > 嵌套\n"
+      ]
+    },
+    {
+      "id": "md2html-list-nested",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "1. a\n   - b\n     - c\n2. d\n"
+      ]
+    },
+    {
+      "id": "md2html-heading-id",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# 标题 {#custom-id}\n"
+      ],
+      "setup": [
+        [
+          "SetHeadingID",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-heading-anchor",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# 标题\n"
+      ],
+      "setup": [
+        [
+          "SetHeadingAnchor",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-toc",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "[toc]\n\n# 一\n\n## 二\n"
+      ],
+      "setup": [
+        [
+          "SetToC",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-emoji",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ":heart: :smile:\n"
+      ]
+    },
+    {
+      "id": "md2html-emoji-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ":heart:\n"
+      ],
+      "setup": [
+        [
+          "SetEmoji",
+          false
+        ]
+      ]
+    },
+    {
+      "id": "md2html-link-ref",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "[foo]\n\n[foo]: /bar \"title\"\n"
+      ]
+    },
+    {
+      "id": "md2html-autolink",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "https://example.com/a?b=c\n"
+      ]
+    },
+    {
+      "id": "md2html-html-block",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<div class=\"x\">\n<b>raw</b>\n</div>\n"
+      ]
+    },
+    {
+      "id": "md2html-sanitize",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<script>alert(1)</script>\n\n<img src=x onerror=alert(1)>\n"
+      ],
+      "setup": [
+        [
+          "SetSanitize",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-sanitize-off",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "<script>alert(1)</script>\n"
+      ],
+      "note": "默认不过滤"
+    },
+    {
+      "id": "md2html-kramdown-ial",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "# 标题\n{: id=\"x\" class=\"y\"}\n"
+      ],
+      "setup": [
+        [
+          "SetKramdownIAL",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-superblock",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "{{{row\n段落一\n\n段落二\n}}}\n"
+      ],
+      "setup": [
+        [
+          "SetSuperBlock",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-callout",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "> [!NOTE]\n> 提示内容\n"
+      ],
+      "setup": [
+        [
+          "SetCallout",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-tabs",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "{{{tabs\n{{{tab 页签一}}}\n内容一\n}}}\n"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-tag",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "#标签# 与 #另一个 标签#\n"
+      ],
+      "setup": [
+        [
+          "SetTag",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-blockref",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "引用 ((20210101120000-abcdefg \"锚文本\"))\n"
+      ],
+      "setup": [
+        [
+          "SetBlockRef",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-mark",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "==高亮== ^上标^ ~下标~\n"
+      ],
+      "setup": [
+        [
+          "SetMark",
+          true
+        ],
+        [
+          "SetSup",
+          true
+        ],
+        [
+          "SetSub",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "md2html-yaml",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "---\ntitle: t\n---\n\n正文\n"
+      ]
+    },
+    {
+      "id": "md2html-setext",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "标题\n===\n\n副标题\n---\n"
+      ]
+    },
+    {
+      "id": "format-basic",
+      "api": "FormatStr",
+      "args": [
+        "",
+        "#   标题\n\n*  a\n*  b\n"
+      ],
+      "note": "格式化 Markdown"
+    },
+    {
+      "id": "format-empty",
+      "api": "FormatStr",
+      "args": [
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "format-table",
+      "api": "FormatStr",
+      "args": [
+        "",
+        "|a|b|\n|-|-|\n|1|2|\n"
+      ]
+    },
+    {
+      "id": "textbundle",
+      "api": "TextBundleStr",
+      "args": [
+        "n",
+        "![a](b.png)\n\n[链接](https://example.com)\n",
+        []
+      ],
+      "note": "返回 [textbundle, originalLinks]"
+    },
+    {
+      "id": "textbundle-prefix",
+      "api": "TextBundleStr",
+      "args": [
+        "n",
+        "![a](https://cdn.example.com/b.png)\n",
+        [
+          "https://cdn.example.com"
+        ]
+      ]
+    },
+    {
+      "id": "textbundle-empty",
+      "api": "TextBundleStr",
+      "args": [
+        "n",
+        "",
+        []
+      ]
+    },
+    {
+      "id": "renderjson",
+      "api": "RenderJSON",
+      "args": [
+        "# 标题\n\n正文 **粗体**\n"
+      ]
+    },
+    {
+      "id": "renderjson-table",
+      "api": "RenderJSON",
+      "args": [
+        "| a | b |\n| --- | --- |\n| 1 | 2 |\n"
+      ]
+    },
+    {
+      "id": "space-zh-en",
+      "api": "Space",
+      "args": [
+        "中文abc中文123"
+      ]
+    },
+    {
+      "id": "space-punct",
+      "api": "Space",
+      "args": [
+        "中文，abc。"
+      ]
+    },
+    {
+      "id": "space-noop",
+      "api": "Space",
+      "args": [
+        "hello world"
+      ]
+    },
+    {
+      "id": "isvalidlink-http",
+      "api": "IsValidLinkDest",
+      "args": [
+        "https://example.com"
+      ]
+    },
+    {
+      "id": "isvalidlink-text",
+      "api": "IsValidLinkDest",
+      "args": [
+        "not a link"
+      ]
+    },
+    {
+      "id": "isvalidlink-bracket",
+      "api": "IsValidLinkDest",
+      "args": [
+        "[foo]"
+      ]
+    },
+    {
+      "id": "getlinkdest",
+      "api": "GetLinkDest",
+      "args": [
+        "https://example.com/a"
+      ]
+    },
+    {
+      "id": "getlinkdest-file",
+      "api": "GetLinkDest",
+      "args": [
+        "file:///tmp/a.png"
+      ]
+    },
+    {
+      "id": "getlinkdest-invalid",
+      "api": "GetLinkDest",
+      "args": [
+        "plain text"
+      ]
+    },
+    {
+      "id": "emoji-get-default",
+      "api": "GetEmojis",
+      "args": [],
+      "setup": [
+        [
+          "SetEmojis",
+          {
+            "heart": "❤️",
+            "smile": "😄"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "emoji-put",
+      "api": "GetEmojis",
+      "args": [],
+      "setup": [
+        [
+          "SetEmojis",
+          {
+            "a": "A"
+          }
+        ],
+        [
+          "PutEmojis",
+          {
+            "b": "B"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "emoji-remove",
+      "api": "RemoveEmoji",
+      "args": [
+        "你好 😄 世界 ❤️"
+      ],
+      "setup": [
+        [
+          "SetEmojis",
+          {
+            "smile": "😄",
+            "heart": "❤️"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "emoji-site",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ":custom:\n"
+      ],
+      "setup": [
+        [
+          "SetEmojis",
+          {
+            "custom": "<img src=\"{emojisite}/custom.png\" />"
+          }
+        ],
+        [
+          "SetEmojiSite",
+          "https://cdn.example.com/emoji"
+        ]
+      ]
+    },
+    {
+      "id": "terms-get",
+      "api": "GetTerms",
+      "args": [],
+      "setup": [
+        [
+          "SetTerms",
+          {
+            "github": "GitHub"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "terms-put",
+      "api": "GetTerms",
+      "args": [],
+      "setup": [
+        [
+          "SetTerms",
+          {
+            "a": "A"
+          }
+        ],
+        [
+          "PutTerms",
+          {
+            "b": "B"
+          }
+        ]
+      ]
+    },
+    {
+      "id": "terms-fix",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "github 和 javascript\n"
+      ],
+      "setup": [
+        [
+          "SetFixTermTypo",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "getlinkbase",
+      "api": "GetLinkBase",
+      "args": [],
+      "setup": [
+        [
+          "SetLinkBase",
+          "https://example.com/base"
+        ]
+      ]
+    },
+    {
+      "id": "linkbase-render",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](b.png)\n"
+      ],
+      "setup": [
+        [
+          "SetLinkBase",
+          "https://example.com/base"
+        ]
+      ]
+    },
+    {
+      "id": "linkprefix-render",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "![a](/local/b.png)\n"
+      ],
+      "setup": [
+        [
+          "SetLinkPrefix",
+          "https://cdn.example.com"
+        ]
+      ]
+    },
+    {
+      "id": "md2html-api",
+      "api": "Md2HTML",
+      "args": [
+        "# 标题\n\n正文\n"
+      ]
+    },
+    {
+      "id": "md2html-api-empty",
+      "api": "Md2HTML",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "protylepreview-basic",
+      "api": "ProtylePreviewStr",
+      "args": [
+        "n",
+        "# 标题\n\n正文 **粗体**\n"
+      ]
+    },
+    {
+      "id": "protylepreview-empty",
+      "api": "ProtylePreviewStr",
+      "args": [
+        "n",
+        ""
+      ]
+    },
+    {
+      "id": "echarts-mindmap",
+      "api": "RenderEChartsJSON",
+      "args": [
+        "- 根\n  - 子一\n  - 子二\n"
+      ]
+    },
+    {
+      "id": "echarts-mindmap-empty",
+      "api": "RenderEChartsJSON",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "kityminder",
+      "api": "RenderKityMinderJSON",
+      "args": [
+        "- 根\n  - 子一\n"
+      ]
+    },
+    {
+      "id": "kityminder-empty",
+      "api": "RenderKityMinderJSON",
+      "args": [
+        ""
+      ]
+    }
+  ]
+}

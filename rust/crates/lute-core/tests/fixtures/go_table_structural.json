@@ -1,0 +1,104 @@
+{
+  "spans": [
+    {
+      "name": "middle rowspan",
+      "head": "<tr><th>A</th><th>B</th><th>C</th></tr>",
+      "body": "<tr><td>a</td><td rowspan=\"2\">merged</td><td>b</td></tr><tr><td>c</td><td>d</td></tr>",
+      "expected": "<tbody><tr><td>a</td><td rowspan=\"2\">merged</td><td>b</td></tr><tr><td>c</td><td class=\"fn__none\"></td><td>d</td></tr></tbody>"
+    },
+    {
+      "name": "staggered rowspans",
+      "head": "<tr><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>",
+      "body": "<tr><td>A1</td><td>B1</td><td>C1</td><td rowspan=\"4\">D</td><td>E1</td><td rowspan=\"4\">F</td></tr><tr><td>A2</td><td>B2</td><td>C2</td><td rowspan=\"3\">E2</td></tr><tr><td>A3</td><td>B3</td><td>C3</td></tr><tr><td>A4</td><td>B4</td><td>C4</td></tr>",
+      "expected": "<tbody><tr><td>A1</td><td>B1</td><td>C1</td><td rowspan=\"4\">D</td><td>E1</td><td rowspan=\"4\">F</td></tr><tr><td>A2</td><td>B2</td><td>C2</td><td class=\"fn__none\"></td><td rowspan=\"3\">E2</td><td class=\"fn__none\"></td></tr><tr><td>A3</td><td>B3</td><td>C3</td><td class=\"fn__none\"></td><td class=\"fn__none\"></td><td class=\"fn__none\"></td></tr><tr><td>A4</td><td>B4</td><td>C4</td><td class=\"fn__none\"></td><td class=\"fn__none\"></td><td class=\"fn__none\"></td></tr></tbody>"
+    },
+    {
+      "name": "combined spans with existing placeholders",
+      "head": "<tr><th>A</th><th>B</th><th>C</th></tr>",
+      "body": "<tr><td colspan=\"2\" rowspan=\"2\" style=\"color: red;\">merged</td><td class=\"fn__none\"></td><td>b</td></tr><tr><td>c</td></tr>",
+      "expected": "<tbody><tr><td style=\"color: red;\" colspan=\"2\" rowspan=\"2\">merged</td><td class=\"fn__none\"></td><td>b</td></tr><tr><td class=\"fn__none\"></td><td class=\"fn__none\"></td><td>c</td></tr></tbody>",
+      "imported": "<tbody><tr><td colspan=\"2\" rowspan=\"2\"><span data-type=\"text\" style=\"color: red;\">merged</span></td><td class=\"fn__none\"></td><td>b</td></tr><tr><td class=\"fn__none\"></td><td class=\"fn__none\"></td><td>c</td></tr></tbody>"
+    },
+    {
+      "name": "colspan in header and body",
+      "head": "<tr><th colspan=\"2\">head</th><th>C</th></tr>",
+      "body": "<tr><td>a</td><td colspan=\"2\">wide</td></tr>",
+      "expected": "<thead><tr><th colspan=\"2\">head</th><th class=\"fn__none\"></th><th>C</th></tr></thead><tbody><tr><td>a</td><td colspan=\"2\">wide</td><td class=\"fn__none\"></td></tr></tbody>"
+    },
+    {
+      "name": "fully covered row",
+      "head": "<tr><th>A</th><th>B</th></tr>",
+      "body": "<tr><td colspan=\"2\" rowspan=\"2\">merged</td></tr><tr></tr>",
+      "expected": "<tbody><tr><td colspan=\"2\" rowspan=\"2\">merged</td><td class=\"fn__none\"></td></tr><tr><td class=\"fn__none\"></td><td class=\"fn__none\"></td></tr></tbody>"
+    },
+    {
+      "name": "separate row groups",
+      "head": "<tr><th rowspan=\"2\">head</th><th>B</th></tr>",
+      "body": "<tr><td>a</td><td>b</td></tr>",
+      "expected": "<tbody><tr><td>a</td><td>b</td></tr></tbody>"
+    }
+  ],
+  "theme": [
+    {
+      "name": "issue",
+      "cell": "<span style=\"color: var(--b3-font-color6);\">测试文本 ⭐⭐⭐ / 测试文本</span>⭐⭐⭐<br />测试文本<span style=\"color: var(--b3-font-color6);\">测试文本 </span>⭐",
+      "want": [
+        "style=\"color: var(--b3-font-color6);\"",
+        "测试文本 ⭐⭐⭐ / 测试文本",
+        "<br />",
+        "测试文本 </span>⭐"
+      ]
+    },
+    {
+      "name": "attributes",
+      "cell": "<SPAN title='' class='custom' STYLE='color: var(--b3-font-color10);background:var(--b3-font-background3)'>text</SPAN>",
+      "want": [
+        "color: var(--b3-font-color10);background-color: var(--b3-font-background3);",
+        ">text</span>"
+      ]
+    },
+    {
+      "name": "nested",
+      "cell": "<span style=\"color:var(--b3-font-color6)\">outer <span style=\"color:var(--b3-font-color1)\">inner</span> tail **bold** [link](https://example.com)</span>",
+      "want": [
+        "style=\"color: var(--b3-font-color1);\">inner</span>",
+        "style=\"color: var(--b3-font-color6);\"> tail ",
+        "data-type=\"strong\"",
+        "data-href=\"https://example.com\""
+      ]
+    },
+    {
+      "name": "native",
+      "cell": "<span data-type=\"text\" style=\"color: var(--b3-font-color10);\">native</span> <span style=\"color:var(--b3-font-color6)\">plain</span>",
+      "want": [
+        "style=\"color: var(--b3-font-color10);\">native</span>",
+        "style=\"color: var(--b3-font-color6);\">plain</span>"
+      ]
+    }
+  ],
+  "theme_boundaries": [
+    "| Header |\n| --- |\n| `<span style=\"color:var(--b3-font-color6)\">code</span>` |",
+    "```html\n<span style=\"color:var(--b3-font-color6)\">code</span>\n```",
+    "| Header |\n| --- |\n| <span style=\"color:var(--b3-font-color6)\">unclosed |",
+    "| Header |\n| --- |\n| &lt;span style=\"color:var(--b3-font-color6)\"&gt;literal&lt;/span&gt; |"
+  ],
+  "structure_boundaries": [
+    "`- [ ] literal`",
+    "\\- [ ] literal",
+    "- \\[ ] literal",
+    "ordinary",
+    "- literal<br />1. literal",
+    "`<ul><li>code</li></ul>`",
+    "&lt;ul&gt;&lt;li&gt;literal&lt;/li&gt;&lt;/ul&gt;",
+    "<ul><li>unclosed",
+    "<ul><li>mismatch</ul></li>",
+    "<table><tr><td>nested</td></tr></table>",
+    "<p>keep</p><script>alert(1)</script>",
+    "<p onclick='alert(1)'>keep</p>"
+  ],
+  "merged": "<div data-type=\"NodeTable\" colgroup=\"|\"><div contenteditable=\"true\" spellcheck=\"false\"><table><colgroup><col><col></colgroup><thead><tr><th>1</th><th>reels</th></tr></thead><tbody><tr><td rowspan=\"2\">4</td><td><span data-type=\"backslash\">*</span>raj-s</td></tr><tr><td class=\"fn__none\"></td><td><span data-type=\"backslash\">*</span>[r]aj</td></tr></tbody></table><div class=\"protyle-action__table\"><div class=\"table__resize\"></div><div class=\"table__select\"></div></div></div><div class=\"protyle-attr\" contenteditable=\"false\">&#8203;</div></div>",
+  "caption": {
+    "from": "<table custom-caption-test=\"yes\"><caption style=\"color: red; caption-side: BOTTOM !important\"><strong>A &amp; B</strong></caption><tr><td colspan=\"2\">Wide</td><td>C</td></tr><tr><td>D</td><td>E</td><td>F</td></tr></table>",
+    "expected": "<div data-node-id=\"20060102150405-1a2b3c4\" data-node-index=\"1\" data-type=\"NodeTable\" class=\"table\" caption=\"&amp;lt;caption contenteditable=&amp;quot;false&amp;quot; style=&amp;quot;caption-side: bottom;&amp;quot;&amp;gt;A &amp;amp;amp; B&amp;lt;/caption&amp;gt;\" custom-caption-test=\"yes\" updated=\"20060102150405\"><div contenteditable=\"false\"><table contenteditable=\"true\" spellcheck=\"false\"><caption contenteditable=\"false\" style=\"caption-side: bottom;\">A &amp; B</caption><colgroup><col /><col /><col /></colgroup><thead><tr><th colspan=\"2\">Wide</th><th class=\"fn__none\"></th><th>C</th></tr></thead><tbody><tr><td>D</td><td>E</td><td>F</td></tr></tbody></table><div class=\"protyle-action__table\"><div class=\"table__resize\"></div><div class=\"table__select\"></div></div></div><div class=\"protyle-attr\" contenteditable=\"false\">​</div></div>"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "group": "html2md",
+  "cases": [
+    {
+      "id": "html2md-basic",
+      "api": "HTML2Md",
+      "args": [
+        "<h1>标题</h1><p><strong>粗体</strong> 与 <em>斜体</em></p>"
+      ]
+    },
+    {
+      "id": "html2md-inline",
+      "api": "HTML2Md",
+      "args": [
+        "<p>a <code>b</code> c</p>"
+      ]
+    },
+    {
+      "id": "html2md-table",
+      "api": "HTML2Md",
+      "args": [
+        "<table><thead><tr><th>a</th><th>b</th></tr></thead><tbody><tr><td>1</td><td>2</td></tr></tbody></table>"
+      ]
+    },
+    {
+      "id": "html2md-list",
+      "api": "HTML2Md",
+      "args": [
+        "<ul><li>a</li><li>b<ul><li>c</li></ul></li></ul>"
+      ]
+    },
+    {
+      "id": "html2md-ordered",
+      "api": "HTML2Md",
+      "args": [
+        "<ol><li>a</li><li>b</li></ol>"
+      ]
+    },
+    {
+      "id": "html2md-img",
+      "api": "HTML2Md",
+      "args": [
+        "<p><img src=\"a.png\" alt=\"图片\" title=\"t\"></p>"
+      ]
+    },
+    {
+      "id": "html2md-link",
+      "api": "HTML2Md",
+      "args": [
+        "<p><a href=\"https://example.com\" title=\"t\">链接</a></p>"
+      ]
+    },
+    {
+      "id": "html2md-pre",
+      "api": "HTML2Md",
+      "args": [
+        "<pre><code class=\"language-go\">func main() {}\n</code></pre>"
+      ]
+    },
+    {
+      "id": "html2md-blockquote",
+      "api": "HTML2Md",
+      "args": [
+        "<blockquote><p>引用</p></blockquote>"
+      ]
+    },
+    {
+      "id": "html2md-hr",
+      "api": "HTML2Md",
+      "args": [
+        "<p>a</p><hr><p>b</p>"
+      ]
+    },
+    {
+      "id": "html2md-inline-style",
+      "api": "HTML2Md",
+      "args": [
+        "<p><span style=\"font-weight: bold;\">粗</span> <u>下划线</u> <mark>高亮</mark></p>"
+      ],
+      "setup": [
+        [
+          "SetHTMLTag2TextMark",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "html2md-attrs",
+      "api": "HTML2Md",
+      "args": [
+        "<p><span data-node-id=\"x\" class=\"c\">文本</span></p>"
+      ],
+      "setup": [
+        [
+          "SetHTML2MarkdownAttrs",
+          [
+            "data-node-id",
+            "class"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "html2md-empty",
+      "api": "HTML2Md",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "html2md-plain",
+      "api": "HTML2Md",
+      "args": [
+        "纯文本"
+      ]
+    },
+    {
+      "id": "html2md-entity",
+      "api": "HTML2Md",
+      "args": [
+        "<p>&amp; &lt; &gt; &quot; &#39;</p>"
+      ]
+    },
+    {
+      "id": "html2markdown-basic",
+      "api": "HTML2Markdown",
+      "args": [
+        "<h2>标题</h2><p>正文</p>"
+      ],
+      "note": "返回 [markdown, error]"
+    },
+    {
+      "id": "html2markdown-empty",
+      "api": "HTML2Markdown",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "html2text-basic",
+      "api": "HTML2Text",
+      "args": [
+        "<p>x <b>y</b></p>"
+      ]
+    },
+    {
+      "id": "html2text-block",
+      "api": "HTML2Text",
+      "args": [
+        "<h1>标题</h1><p>段落一</p><p>段落二</p>"
+      ]
+    },
+    {
+      "id": "html2text-empty",
+      "api": "HTML2Text",
+      "args": [
+        ""
+      ]
+    },
+    {
+      "id": "html2text-list",
+      "api": "HTML2Text",
+      "args": [
+        "<ul><li>a</li><li>b</li></ul>"
+      ]
+    }
+  ]
+}

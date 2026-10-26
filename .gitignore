@@ -1,0 +1,9 @@
+# Rust 构建产物
+rust/target/
+
+# demo 依赖与复制出来的产物
+demo/node_modules/
+demo/vendor/
+
+# 本地生成的差异报告
+javascript/conformance/report/

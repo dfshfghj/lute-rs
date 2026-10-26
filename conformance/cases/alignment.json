@@ -1,0 +1,240 @@
+{
+  "group": "alignment",
+  "cases": [
+    {
+      "id": "alignment-span-ial",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "**bold**{: style=\"color:red\"}"
+      ],
+      "setup": [
+        [
+          "SetKramdownSpanIAL",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-span-ial-entities",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "*foo*{: title=\"a &quot;b&quot; &amp; c\"}{: title=\"a &quot;b&quot; &amp; c\"} tail"
+      ],
+      "setup": [
+        [
+          "SetKramdownSpanIAL",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-math-ial-close",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$$\nx\n{: id=\"20260101000000-abcdefg\"}\nafter"
+      ],
+      "setup": [
+        [
+          "SetKramdownBlockIAL",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-math-inline-span",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$$\n<span data-type=\"inline-math\" data-content=\"x+y\">x+y</span>\n$$"
+      ],
+      "setup": []
+    },
+    {
+      "id": "alignment-math-caret-protylewysiwyg",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$$x$$‸"
+      ],
+      "setup": [
+        [
+          "SetProtyleWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-math-caret-vditorwysiwyg",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$$x$$‸"
+      ],
+      "setup": [
+        [
+          "SetVditorWYSIWYG",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-math-caret-vditorir",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$$x$$‸"
+      ],
+      "setup": [
+        [
+          "SetVditorIR",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-math-caret-vditorsv",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        "$$x$$‸"
+      ],
+      "setup": [
+        [
+          "SetVditorSV",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-format",
+      "api": "FormatStr",
+      "args": [
+        "",
+        ":::: tabs\n@tab **First**\n\nBody\n::: tabs\n@tab Inner\n\nNested\n:::\n@tab:active Second\n\nOther\n::::\n"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-html",
+      "api": "MarkdownStr",
+      "args": [
+        "",
+        ":::: tabs\n@tab **First**\n\nBody\n::: tabs\n@tab Inner\n\nNested\n:::\n@tab:active Second\n\nOther\n::::\n"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-blockdom",
+      "api": "Md2BlockDOM",
+      "args": [
+        ":::: tabs\n@tab **First**\n\nBody\n::: tabs\n@tab Inner\n\nNested\n:::\n@tab:active Second\n\nOther\n::::\n",
+        false
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-html2md",
+      "api": "HTML2Md",
+      "args": [
+        "<div class=\"tabs\" tabs-position=\"left\"><div class=\"tab-item\"><div class=\"tab-item-info\"><span class=\"tab-item-title\"> <strong>Title</strong> </span></div><div class=\"tab-item-content\"><p>Body</p></div></div></div>"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-html2blockdom",
+      "api": "HTML2BlockDOM",
+      "args": [
+        "<div class=\"tabs\" tabs-position=\"left\"><div class=\"tab-item\"><div class=\"tab-item-info\"><span class=\"tab-item-title\"> <strong>Title</strong> </span></div><div class=\"tab-item-content\"><p>Body</p></div></div></div>"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-literal-title-13",
+      "api": "BlockDOM2StdMd",
+      "args": [
+        "<div data-type=\"NodeTabItem\" class=\"tab-item\"><div class=\"tab-item-info\"><span class=\"tab-item-title\"># literal</span></div><div class=\"tab-item-content\"><div data-type=\"NodeParagraph\"><div contenteditable=\"true\">Body</div></div></div></div>"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-literal-title-14",
+      "api": "BlockDOM2StdMd",
+      "args": [
+        "<div data-type=\"NodeTabItem\" class=\"tab-item\"><div class=\"tab-item-info\"><span class=\"tab-item-title\">- literal</span></div><div class=\"tab-item-content\"><div data-type=\"NodeParagraph\"><div contenteditable=\"true\">Body</div></div></div></div>"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-tabs-literal-title-15",
+      "api": "BlockDOM2StdMd",
+      "args": [
+        "<div data-type=\"NodeTabItem\" class=\"tab-item\"><div class=\"tab-item-info\"><span class=\"tab-item-title\">---</span></div><div class=\"tab-item-content\"><div data-type=\"NodeParagraph\"><div contenteditable=\"true\">Body</div></div></div></div>"
+      ],
+      "setup": [
+        [
+          "SetTabs",
+          true
+        ]
+      ]
+    },
+    {
+      "id": "alignment-html-dom-normalize-table",
+      "api": "HTML2Md",
+      "args": [
+        "<table>\n<thead>\n<tr><th>a</th><th>b</th></tr>\n</thead>\n<tbody>\n<tr><td>x</td><td>y</td></tr>\n</tbody>\n</table>"
+      ]
+    },
+    {
+      "id": "alignment-html-dom-normalize-math",
+      "api": "HTML2Md",
+      "args": [
+        "<p><span class=\"language-math\">x</span></p>"
+      ]
+    },
+    {
+      "id": "alignment-html-nested-display-math",
+      "api": "HTML2Md",
+      "args": [
+        "<p>a<span class=\"language-math\" data-math=\"x\"><span><span class=\"katex-display\">rendered</span></span></span>b</p>"
+      ]
+    }
+  ]
+}
